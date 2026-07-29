@@ -1,0 +1,22 @@
+<svg width="800" height="24" viewBox="0 0 800 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="chakra flow divider">
+  <defs>
+    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#173a56"/>
+      <stop offset="50%" stop-color="#7fd4ff"/>
+      <stop offset="100%" stop-color="#173a56"/>
+    </linearGradient>
+  </defs>
+  <path d="M0,12 Q 50,2 100,12 T 200,12 T 300,12 T 400,12 T 500,12 T 600,12 T 700,12 T 800,12"
+        fill="none" stroke="url(#flowGrad)" stroke-width="2" stroke-dasharray="10 8">
+    <animate attributeName="stroke-dashoffset" from="0" to="-36" dur="1.6s" repeatCount="indefinite"/>
+  </path>
+  <circle cx="90" cy="10" r="2.5" fill="#eaf6ff">
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="1.6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="400" cy="14" r="2.5" fill="#eaf6ff">
+    <animate attributeName="opacity" values="1;0.2;1" dur="1.6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="710" cy="10" r="2.5" fill="#eaf6ff">
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>

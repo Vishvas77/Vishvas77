@@ -1,0 +1,52 @@
+<svg width="900" height="200" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vishvas77 rank scroll with animated rasengan">
+  <defs>
+    <radialGradient id="chakraCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#eaf6ff"/>
+      <stop offset="55%" stop-color="#7fd4ff"/>
+      <stop offset="100%" stop-color="#1e6fb8"/>
+    </radialGradient>
+    <linearGradient id="blade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bfe9ff"/>
+      <stop offset="100%" stop-color="#2a8fd8"/>
+    </linearGradient>
+    <clipPath id="scrollClip">
+      <rect x="240" y="0" width="0" height="200">
+        <animate attributeName="width" values="0;620;620;0" keyTimes="0;0.35;0.85;1" dur="8s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+  </defs>
+
+  <rect width="900" height="200" fill="#0d1117"/>
+
+  <g transform="translate(110,100)">
+    <circle r="72" fill="none" stroke="#173a56" stroke-width="2"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2.4s" repeatCount="indefinite"/>
+      <path d="M0,0 C 10,-46 40,-58 60,-40 C 40,-34 16,-18 0,0 Z" fill="url(#blade)" opacity="0.9"/>
+      <path d="M0,0 C 46,10 58,40 40,60 C 34,40 18,16 0,0 Z" fill="url(#blade)" opacity="0.9"/>
+      <path d="M0,0 C -10,46 -40,58 -60,40 C -40,34 -16,18 0,0 Z" fill="url(#blade)" opacity="0.9"/>
+      <path d="M0,0 C -46,-10 -58,-40 -40,-60 C -34,-40 -18,-16 0,0 Z" fill="url(#blade)" opacity="0.9"/>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="3.6s" repeatCount="indefinite"/>
+      <circle cx="0" cy="-50" r="4" fill="#eaf6ff"/>
+      <circle cx="50" cy="0" r="4" fill="#eaf6ff"/>
+      <circle cx="0" cy="50" r="4" fill="#eaf6ff"/>
+      <circle cx="-50" cy="0" r="4" fill="#eaf6ff"/>
+    </g>
+    <circle r="20" fill="url(#chakraCore)">
+      <animate attributeName="r" values="18;23;18" dur="1.3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <text x="240" y="45" font-family="Consolas, Menlo, monospace" font-size="26" font-weight="700" fill="#eaf6ff">VISHVAS77</text>
+  <text x="240" y="68" font-family="Consolas, Menlo, monospace" font-size="13" fill="#7fd4ff">Salesforce dev + AI agent systems — the main arc, not a side quest</text>
+
+  <rect x="240" y="95" width="620" height="46" rx="4" fill="none" stroke="#3a4a5c" stroke-width="1"/>
+  <g clip-path="url(#scrollClip)">
+    <rect x="240" y="95" width="620" height="46" rx="4" fill="#e9d9b6"/>
+    <text x="256" y="124" font-family="Consolas, Menlo, monospace" font-size="15" font-weight="600" fill="#3a2a12">ACADEMY STUDENT → GENIN → CHUNIN → JONIN-TRACK (in progress)</text>
+  </g>
+  <rect x="232" y="90" width="10" height="56" rx="5" fill="#5c4326"/>
+  <rect x="858" y="90" width="10" height="56" rx="5" fill="#5c4326"/>
+</svg>

@@ -60,25 +60,38 @@ function svgDoc(viewBoxW, viewBoxH, body, title, desc) {
 }
 
 function toriiD(cx, w, lintelY, baseY) {
-  const half = snap8(w / 2);
-  const overhang = snap8(w * 0.12);
-  const slabTop = snap8(lintelY);
-  const slabBot = slabTop + 16;
-  const capHalf = snap8(w * 0.3);
-  const capTop = slabTop - 12;
-  const legW = 24;
-  const legIn = snap8(half * 0.58);
-  const lx1 = snap8(cx - legIn);
-  const lx2 = snap8(lx1 + legW);
-  const rx1 = snap8(cx + legIn - legW);
-  const rx2 = snap8(rx1 + legW);
-  const legTaperOuter = 6;
+  // Proper torii silhouette: two slender uprights near the OUTER edges running to
+  // the ground, an overhanging top beam (kasagi) with a gentle upward sweep, and a
+  // second tie-beam (nuki) below it. This is what separates a gate from a table —
+  // the beam overhangs the pillars, the pillars are tall/slender and lean inward,
+  // and there are two stacked horizontals, not one slab with a riser.
+  const half = snap8(w / 2); // half the pillar-outer span
+  const overhang = snap8(w * 0.2); // kasagi overhang beyond the pillars
+  const pillarW = 16; // slender uprights
+  const lean = 6; // inward lean of the pillar tops
+  const kTop = snap8(lintelY); // kasagi upper edge
+  const kBot = kTop + 14; // kasagi thickness
+  const nTop = kBot + 12; // gap, then the nuki (tie beam)
+  const nBot = nTop + 9;
+  const nHalf = half - 2; // nuki spans just inside the pillar outers
+  const loB = cx - half,
+    liB = cx - half + pillarW; // left pillar base x-range
+  const roB = cx + half,
+    riB = cx + half - pillarW; // right pillar base x-range
+  const loT = loB + lean,
+    liT = liB + lean; // left pillar top (leans in)
+  const roT = roB - lean,
+    riT = riB - lean; // right pillar top (leans in)
   return (
-    `M${cx - half - overhang} ${slabTop + 6} Q${cx - half * 0.4} ${slabTop - 4} ${cx} ${slabTop - 4} Q${cx + half * 0.4} ${slabTop - 4} ${cx + half + overhang} ${slabTop + 6} ` +
-    `L${cx + half + overhang} ${slabBot} L${cx - half - overhang} ${slabBot} Z ` +
-    `M${cx - capHalf} ${capTop} H${cx + capHalf} V${slabTop - 4} H${cx - capHalf} Z ` +
-    `M${lx1} ${slabBot} L${lx1 - legTaperOuter} ${baseY} H${lx2 - legTaperOuter} L${lx2} ${slabBot} Z ` +
-    `M${rx1} ${slabBot} L${rx1 + legTaperOuter} ${baseY} H${rx2 + legTaperOuter} L${rx2} ${slabBot} Z`
+    // kasagi: overhanging top beam, gentle upward sweep (concave underside)
+    `M${cx - half - overhang} ${kTop + 6} Q${cx} ${kTop - 6} ${cx + half + overhang} ${kTop + 6} ` +
+    `L${cx + half + overhang} ${kBot + 2} Q${cx} ${kBot - 4} ${cx - half - overhang} ${kBot + 2} Z ` +
+    // nuki: lower tie beam
+    `M${cx - nHalf} ${nTop} H${cx + nHalf} V${nBot} H${cx - nHalf} Z ` +
+    // left pillar (leans inward toward the top)
+    `M${loT} ${kBot} L${liT} ${kBot} L${liB} ${baseY} L${loB} ${baseY} Z ` +
+    // right pillar
+    `M${riT} ${kBot} L${roT} ${kBot} L${roB} ${baseY} L${riB} ${baseY} Z`
   );
 }
 
@@ -115,38 +128,59 @@ const HANDS = {
   },
 };
 
-function handPath(d, extra) {
-  return `<path d="${d}" fill="${C.shadow}" stroke="${C.rim}" stroke-width="1.75" stroke-opacity="0.9" stroke-linejoin="round"${extra ?? ""}/>`;
+// Presentation presets for the (sacred, reference-derived) seal geometry. Geometry is
+// never touched here — only fill/rim/contrast. "hero" gives the silhouette a luminous
+// filled body + thick bright rim so it reads as the focal subject at README/mobile scale;
+// "review" preserves the flat neutral-background look for geometry inspection.
+function handStyle(preset) {
+  if (preset === "review")
+    return { fillL: C.shadow, fillR: C.shadow, rim: C.rim, rimW: 1.75, rimO: 0.9, nail: C.blood, nailO: 0.5, detail: C.blood, detailO: 0.4, detailW: 1.5 };
+  // Dark-etched detail lines (shadow) over the lit fill make the finger divisions read;
+  // bright thick rim keeps the whole silhouette crisp against the void.
+  return { fillL: "url(#handCoreL)", fillR: "url(#handCoreR)", rim: C.rim, rimW: 3, rimO: 1, nail: C.rim, nailO: 0.92, detail: C.shadow, detailO: 1, detailW: 2.6 };
 }
 
-function handInnerGeometry() {
+function handInnerGeometry(preset) {
+  const s = handStyle(preset);
   return [
-    handPath(HANDS.left.silhouette),
-    handPath(HANDS.right.silhouette),
-    `<path d="${HANDS.left.nails} ${HANDS.right.nails}" fill="${C.blood}" fill-opacity="0.5" stroke="none"/>`,
-    `<path d="${HANDS.left.details} ${HANDS.right.details}" fill="none" stroke="${C.blood}" stroke-width="1.5" stroke-opacity="0.4"/>`,
+    `<path d="${HANDS.left.silhouette}" fill="${s.fillL}" stroke="${s.rim}" stroke-width="${s.rimW}" stroke-opacity="${s.rimO}" stroke-linejoin="round"/>`,
+    `<path d="${HANDS.right.silhouette}" fill="${s.fillR}" stroke="${s.rim}" stroke-width="${s.rimW}" stroke-opacity="${s.rimO}" stroke-linejoin="round"/>`,
+    `<path d="${HANDS.left.nails} ${HANDS.right.nails}" fill="${s.nail}" fill-opacity="${s.nailO}" stroke="none"/>`,
+    `<path d="${HANDS.left.details} ${HANDS.right.details}" fill="none" stroke="${s.detail}" stroke-width="${s.detailW}" stroke-opacity="${s.detailO}" stroke-linecap="round"/>`,
   ].join("");
 }
 
-function handSealGroupStatic(opacity) {
-  return `<g id="seal-geometry" opacity="${opacity}"><g transform="translate(${HANDS.anchor.x} ${HANDS.anchor.y})">${handInnerGeometry()}</g></g>`;
+// Absolute canvas coordinates of the three contact clusters after poster placement.
+function posterContacts() {
+  const h = CMP.poster.hand;
+  const map = (p) => ({ x: h.cx + p[0] * h.scale, y: h.topY + p[1] * h.scale });
+  return { apex: map(h.localContacts.apex), middle: map(h.localContacts.middle), thumb: map(h.localContacts.thumb) };
 }
 
-function handSealGroupAnimated() {
+// Place the seal at its poster position with uniform scale (proportions preserved).
+function handPlaced({ preset, opacity } = {}) {
+  const h = CMP.poster.hand;
+  const op = opacity == null ? "" : ` opacity="${opacity}"`;
+  return `<g id="seal-geometry"${op}><g transform="translate(${h.cx} ${h.topY}) scale(${f(h.scale)})">${handInnerGeometry(preset)}</g></g>`;
+}
+
+function handSealAnimated() {
   const s = T.seal;
-  const p = HANDS.pivot;
+  const h = CMP.poster.hand;
+  // pivot the overshoot/settle about the seal's visual centre
+  const px = h.cx;
+  const py = h.topY + 150 * h.scale;
   return [
     `<g id="seal-geometry">`,
-    `<g transform="translate(${p.x} ${p.y})">`,
+    `<g transform="translate(${px} ${py})">`,
     `<g id="seal-reveal">`,
     anT("scale", "1.07;0.985;1", { begin: s.revealBegin, dur: s.settleDur, kt: "0;0.5;1", ks: `${SPL.snap};${SPL.settle}` }),
-    `<g transform="translate(${-p.x} ${-p.y})">`,
+    `<g transform="translate(${-px} ${-py})">`,
     `<g id="hands" opacity="0">`,
-    `<g transform="translate(${HANDS.anchor.x} ${HANDS.anchor.y})">`,
-    handInnerGeometry(),
+    `<g transform="translate(${h.cx} ${h.topY}) scale(${f(h.scale)})">`,
+    handInnerGeometry("hero"),
     `</g>`,
     an("opacity", "0;1", { begin: s.revealBegin, dur: s.revealCutDur, kt: "0;0.001", discrete: true }),
-    an("opacity", "1;0", { begin: s.exitBegin, dur: s.exitDur, kt: "0;1", ks: SPL.snap }),
     `</g>`,
     `</g>`,
     `</g>`,
@@ -181,18 +215,33 @@ function defsShared({ forStatic }) {
     `<stop offset="100%" stop-color="${C.blood}" stop-opacity="0"/>`,
     `</linearGradient>`,
     `<linearGradient id="wordGrad" x1="0" y1="0" x2="0" y2="1">`,
-    `<stop offset="0%" stop-color="${C.domain}"/>`,
-    `<stop offset="100%" stop-color="${C.blood}"/>`,
+    `<stop offset="0%" stop-color="${C.rim}"/>`,
+    `<stop offset="100%" stop-color="${C.domain}"/>`,
     `</linearGradient>`,
-    forStatic
-      ? ""
-      : [
-          `<linearGradient id="shardGrad" x1="0" y1="1" x2="0" y2="0">`,
-          `<stop offset="0%" stop-color="${C.domain}" stop-opacity="0"/>`,
-          `<stop offset="40%" stop-color="${C.blood}" stop-opacity="0.5"/>`,
-          `<stop offset="100%" stop-color="${C.rim}"/>`,
-          `</linearGradient>`,
-        ].join(""),
+    // Reference-derived seal body: each hand is lit from its OUTER side and falls to
+    // shadow at the inner (center) edge, so a dark cleft forms where the two palms meet —
+    // this is what makes the silhouette read as TWO interlocked hands rather than one blob
+    // at README/mobile scale. userSpaceOnUse in the hand's LOCAL coord space; the right
+    // hand occupies +x, the left −x, so their bright ends point outward in opposite dirs.
+    `<linearGradient id="handCoreR" gradientUnits="userSpaceOnUse" x1="70" y1="34" x2="-2" y2="150">`,
+    `<stop offset="0%" stop-color="${C.rim}"/>`,
+    `<stop offset="50%" stop-color="${C.domain}"/>`,
+    `<stop offset="84%" stop-color="${C.blood}"/>`,
+    `<stop offset="100%" stop-color="${C.shadow}"/>`,
+    `</linearGradient>`,
+    `<linearGradient id="handCoreL" gradientUnits="userSpaceOnUse" x1="-70" y1="34" x2="2" y2="150">`,
+    `<stop offset="0%" stop-color="${C.rim}"/>`,
+    `<stop offset="50%" stop-color="${C.domain}"/>`,
+    `<stop offset="84%" stop-color="${C.blood}"/>`,
+    `<stop offset="100%" stop-color="${C.shadow}"/>`,
+    `</linearGradient>`,
+    // Directional cursed-energy shard (base transparent -> incandescent rim tip).
+    // Shared by the animated burst and the static poster's residual energy.
+    `<linearGradient id="shardGrad" x1="0" y1="1" x2="0" y2="0">`,
+    `<stop offset="0%" stop-color="${C.domain}" stop-opacity="0"/>`,
+    `<stop offset="40%" stop-color="${C.blood}" stop-opacity="0.5"/>`,
+    `<stop offset="100%" stop-color="${C.rim}"/>`,
+    `</linearGradient>`,
   ].join("");
 }
 
@@ -232,65 +281,157 @@ function environmentStatic({ edgeStrokeOpacity, fogOpacities }) {
   ].join("");
 }
 
-function environmentAnimated() {
+// ── Poster layer ────────────────────────────────────────────────────────────
+// Hero and static fallback share ONE composition: the reference-derived seal is
+// the focal subject; the shrine is reduced to two dim flanking gates that never
+// cross the silhouette; a crimson halo lifts the hand off the void; energy stays
+// controlled and directional. This is the fix for the "weak at README scale" gap.
+
+function shrineFrameGeom() {
+  const sf = CMP.poster.shrineFrame;
+  return {
+    sf,
+    L: toriiD(sf.left.cx, sf.left.w, sf.left.lintelY, sf.left.baseY),
+    R: toriiD(sf.right.cx, sf.right.w, sf.right.lintelY, sf.right.baseY),
+  };
+}
+
+function shrineFrameStatic() {
+  const { sf, L, R } = shrineFrameGeom();
   return [
-    `<g id="environment" opacity="0">`,
-    `<path d="${ENV.ground}" fill="${C.shadow}" fill-opacity="0.85"/>`,
-    `<path d="${ENV.toriiMain}" fill="${C.shadow}"/>`,
-    `<path d="${ENV.toriiL}" fill="${C.shadow}" fill-opacity="0.8"/>`,
-    `<path d="${ENV.toriiR}" fill="${C.shadow}" fill-opacity="0.8"/>`,
-    an("opacity", "0;0.05", { begin: 0.5, dur: 1.4, kt: "0;1", ks: SPL.slow }),
-    an("opacity", "0.05;0.62", { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow }),
-    an("opacity", "0.62;0", { begin: 5.55, dur: 0.25, kt: "0;1", ks: SPL.snap }),
+    `<path d="${ENV.ground}" fill="${C.shadow}" fill-opacity="0.5"/>`,
+    `<g id="shrine">`,
+    `<path d="${L}" fill="${C.shadow}" fill-opacity="${sf.fillOpacity}"/>`,
+    `<path d="${R}" fill="${C.shadow}" fill-opacity="${sf.fillOpacity}"/>`,
+    `<path d="${L} ${R}" fill="none" stroke="${C.domain}" stroke-width="2" stroke-opacity="${sf.edgeOpacity}"/>`,
     `</g>`,
-    `<g id="env-edges" opacity="1">`,
-    `<path d="${ENV.toriiMain} ${ENV.toriiL} ${ENV.toriiR}" fill="none" stroke="${C.rim}" stroke-width="2" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" stroke-opacity="0">${an("stroke-dashoffset", "100;0", { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow })}${an("stroke-opacity", "0;0.9", { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow })}</path>`,
-    an("opacity", "1;0", { begin: 5.55, dur: 0.25, kt: "0;1", ks: SPL.snap }),
-    `</g>`,
-    `<rect x="0" y="${CMP.fogBandY}" width="960" height="108" fill="url(#fogGrad)" opacity="0">${an("opacity", "0;0.30", { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow })}${anT("translate", "0 0;12 0", { begin: 4.1, dur: 1.4, kt: "0;1", ks: SPL.slow })}</rect>`,
-    `<rect x="0" y="464" width="960" height="76" fill="url(#fogGrad)" opacity="0">${an("opacity", "0;0.26", { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow })}${anT("translate", "0 0;-10 0", { begin: 4.1, dur: 1.4, kt: "0;1", ks: SPL.slow })}</rect>`,
+    `<rect x="0" y="${CMP.envHorizonY - 2}" width="960" height="4" fill="url(#horizonGrad)" opacity="0.3"/>`,
+    `<rect x="0" y="${CMP.fogBandY}" width="960" height="108" fill="url(#fogGrad)" opacity="0.26"/>`,
   ].join("");
 }
 
-function sealShapesStatic(opacity) {
-  return handSealGroupStatic(opacity);
+function shrineFrameAnimated() {
+  const { sf, L, R } = shrineFrameGeom();
+  return [
+    `<path d="${ENV.ground}" fill="${C.shadow}" fill-opacity="0.5" opacity="0">${an("opacity", "0;1", { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow })}</path>`,
+    `<g id="shrine" opacity="0">`,
+    `<path d="${L}" fill="${C.shadow}" fill-opacity="${sf.fillOpacity}"/>`,
+    `<path d="${R}" fill="${C.shadow}" fill-opacity="${sf.fillOpacity}"/>`,
+    an("opacity", "0;0.05", { begin: 0.5, dur: 1.4, kt: "0;1", ks: SPL.slow }),
+    an("opacity", "0.05;1", { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow }),
+    `</g>`,
+    `<path d="${L} ${R}" fill="none" stroke="${C.domain}" stroke-width="2" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" stroke-opacity="0">${an("stroke-dashoffset", "100;0", { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow })}${an("stroke-opacity", `0;${sf.edgeOpacity}`, { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow })}</path>`,
+    `<rect x="0" y="${CMP.envHorizonY - 2}" width="960" height="4" fill="url(#horizonGrad)" opacity="0">${an("opacity", "0;0.3", { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow })}</rect>`,
+    `<rect x="0" y="${CMP.fogBandY}" width="960" height="108" fill="url(#fogGrad)" opacity="0">${an("opacity", "0;0.26", { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow })}${anT("translate", "0 0;10 0", { begin: 4.1, dur: 1.4, kt: "0;1", ks: SPL.slow })}</rect>`,
+  ].join("");
+}
+
+function domainHalo(opacity) {
+  const h = CMP.poster.halo;
+  return `<ellipse cx="${h.cx}" cy="${h.cy}" rx="${h.rx}" ry="${h.ry}" fill="url(#pressGrad)" opacity="${opacity}"/>`;
+}
+
+// Residual controlled energy for the static poster — asymmetric, emitted from the
+// real contact geometry. This MATCHES the animated end-state: an apex eruption plus
+// the two middle-contact side shards that persist (energy.shards[3],[4]). No
+// downward thumb energy in the hold — it fired at impact and dissipated — so the
+// lower identity lockup stays pristine (hierarchy: wordmark reads clean).
+const POSTER_SHARDS = [
+  { at: "apex", rotate: -20, distance: 300, length: 150, idx: 1, progress: 0.92, op: 0.9 },
+  { at: "apex", rotate: 34, distance: 150, length: 96, idx: 2, progress: 0.85, op: 0.78 },
+  { at: "apex", rotate: -58, distance: 132, length: 82, idx: 0, progress: 0.8, op: 0.7 },
+  { at: "middle", rotate: -75, distance: 190, length: 80, idx: 3, progress: 0.9, op: 0.6 },
+  { at: "middle", rotate: 80, distance: 170, length: 70, idx: 4, progress: 0.9, op: 0.55 },
+];
+
+function posterShards() {
+  const c = posterContacts();
+  return [
+    `<g id="energy" filter="url(#shardWarp)">`,
+    ...POSTER_SHARDS.map((s) => {
+      const o = c[s.at];
+      return `<g transform="translate(${f(o.x)} ${f(o.y)}) rotate(${s.rotate})"><g transform="translate(0 ${f(-s.distance * s.progress)})" opacity="${s.op}"><path d="${shardD(s.length, 6 + s.idx * 2)}" fill="url(#shardGrad)"/></g></g>`;
+    }),
+    `</g>`,
+  ].join("");
+}
+
+function posterFlash() {
+  const c = posterContacts();
+  return `<circle cx="${f(c.apex.x)}" cy="${f(c.apex.y)}" r="11" fill="${C.peak}" filter="url(#glowPeak)" opacity="0.95"/>`;
+}
+
+function identityLockupStatic() {
+  const lk = CMP.poster.lockup;
+  const stLS = T.typography.mono.subtextLetterSpacing;
+  return [
+    `<g id="identity">`,
+    `<path d="M${480 - lk.ruleHalfWidth} ${lk.ruleY} H${480 + lk.ruleHalfWidth}" stroke="${C.rim}" stroke-width="2" opacity="0.85"/>`,
+    `<text x="480" y="${lk.wordmarkBaseline}" text-anchor="middle" font-family="${DISPLAY_FONT}" font-size="${lk.wordmarkSize}" letter-spacing="${lk.wordmarkLetterSpacing}" fill="url(#wordGrad)" stroke="${C.rim}" stroke-width="2" paint-order="stroke" stroke-linejoin="miter">${ID.wordmark}</text>`,
+    `<text x="480" y="${lk.subtextBaseline}" text-anchor="middle" font-family="${MONO_FONT}" font-size="${lk.subtextSize}" letter-spacing="${stLS}" fill="${C.rim}" opacity="0.9">${ID.subtext}</text>`,
+    `</g>`,
+  ].join("");
+}
+
+// Static-safe filter set (no <animate> children): glow for the apex flash, warp for shards.
+function filtersStatic() {
+  return [
+    `<filter id="glowPeak" x="-120%" y="-120%" width="340%" height="340%">`,
+    `<feGaussianBlur stdDeviation="7" result="b"/>`,
+    `<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>`,
+    `</filter>`,
+    `<filter id="shardWarp" x="-40%" y="-40%" width="180%" height="180%">`,
+    `<feTurbulence type="fractalNoise" baseFrequency="0.012 0.045" numOctaves="2" seed="13" result="n"/>`,
+    `<feDisplacementMap in="SourceGraphic" in2="n" scale="26" xChannelSelector="R" yChannelSelector="G"/>`,
+    `</filter>`,
+  ].join("");
+}
+
+function posterComposition() {
+  return [
+    `<rect x="0" y="0" width="960" height="540" fill="url(#voidGrad)"/>`,
+    domainHalo(0.72),
+    shrineFrameStatic(),
+    handPlaced({ preset: "hero" }),
+    posterShards(),
+    posterFlash(),
+    identityLockupStatic(),
+    `<rect x="0" y="0" width="960" height="540" fill="url(#vigGrad)" pointer-events="none"/>`,
+  ].join("\n");
 }
 
 function energyAnimated() {
-  const shards = T.energy.shards
-    .map((s, i) => {
-      const d = shardD(s.length, 6 + i * 2);
-      const offDur = s.fadeDur ?? 0.12;
-      const offBegin = s.fadeBegin ?? s.begin + s.travel - offDur + 0.06;
-      return [
-        `<g transform="translate(${s.ox} ${s.oy}) rotate(${s.rotate})">`,
-        `<g opacity="0">`,
-        `<path d="${d}" fill="url(#shardGrad)"/>`,
-        anT("translate", `0 0;0 ${-s.distance}`, { begin: s.begin, dur: s.travel, kt: "0;1", ks: SPL.snap }),
-        an("opacity", "0;1", { begin: s.begin, dur: 0.08, kt: "0;1", ks: SPL.snap }),
-        an("opacity", "1;0", { begin: offBegin, dur: offDur, kt: "0;1", ks: SPL.snap }),
-        `</g>`,
-        `</g>`,
-      ].join("");
-    });
+  const c = posterContacts();
+  const OY = { 116: "apex", 166: "middle", 327: "thumb" };
+  const shards = T.energy.shards.map((s, i) => {
+    const o = c[OY[s.oy]] ?? c.apex;
+    const d = shardD(s.length, 6 + i * 2);
+    const persist = s.travel >= 0.5; // long slow shards linger as residual domain energy
+    const offDur = s.fadeDur ?? 0.12;
+    const offBegin = s.fadeBegin ?? s.begin + s.travel - offDur + 0.06;
+    return [
+      `<g transform="translate(${f(o.x)} ${f(o.y)}) rotate(${s.rotate})">`,
+      `<g opacity="0">`,
+      `<path d="${d}" fill="url(#shardGrad)"/>`,
+      anT("translate", `0 0;0 ${-s.distance}`, { begin: s.begin, dur: s.travel, kt: "0;1", ks: SPL.snap }),
+      an("opacity", "0;1", { begin: s.begin, dur: 0.08, kt: "0;1", ks: SPL.snap }),
+      persist ? "" : an("opacity", "1;0", { begin: offBegin, dur: offDur, kt: "0;1", ks: SPL.snap }),
+      `</g>`,
+      `</g>`,
+    ].join("");
+  });
 
-  const flash = (pt, begin, dur) =>
-    `<circle cx="${pt.x}" cy="${pt.y}" r="4" fill="${C.peak}" filter="url(#glowPeak)" opacity="0">${an("opacity", "0;1;0", { begin, dur, kt: "0;0.15;1", ks: `${SPL.snap};0.3 0 0.7 1` })}${an("r", "3;16", { begin, dur, kt: "0;1", ks: SPL.snap })}</circle>`;
+  const flash = (pt, begin, dur, maxR) =>
+    `<circle cx="${f(pt.x)}" cy="${f(pt.y)}" r="4" fill="${C.peak}" filter="url(#glowPeak)" opacity="0">${an("opacity", "0;1;0", { begin, dur, kt: "0;0.15;1", ks: `${SPL.snap};0.3 0 0.7 1` })}${an("r", `3;${maxR}`, { begin, dur, kt: "0;1", ks: SPL.snap })}</circle>`;
 
   const impact = T.timeline.find((b) => b.beat === "CONTACT_IMPACT").start;
-  const flashes = [
-    flash(CMP.contacts.apex, impact, 0.3),
-    flash(CMP.contacts.thumb, impact + 0.07, 0.28),
-  ].join("");
+  const flashes = [flash(c.apex, impact, 0.3, 20), flash(c.thumb, impact + 0.07, 0.28, 14)].join("");
 
   const waveD = "M 3 -15 L 14 -8 L 11 -1 L 17 6 L 5 13 L -4 10 L -13 14 L -15 3 L -9 -4 L -13 -10 Z";
   const wave = (pt, begin, dur, maxScale, maxOpacity) =>
-    `<g transform="translate(${pt.x} ${pt.y})"><g opacity="0"><path d="${waveD}" fill="none" stroke="${C.rim}" stroke-width="2"/>${anT("scale", `0.3;${maxScale}`, { begin, dur, kt: "0;1", ks: SPL.snap })}${an("opacity", `${maxOpacity};0`, { begin, dur, kt: "0;1", ks: SPL.snap })}</g></g>`;
+    `<g transform="translate(${f(pt.x)} ${f(pt.y)})"><g opacity="0"><path d="${waveD}" fill="none" stroke="${C.rim}" stroke-width="2"/>${anT("scale", `0.3;${maxScale}`, { begin, dur, kt: "0;1", ks: SPL.snap })}${an("opacity", `${maxOpacity};0`, { begin, dur, kt: "0;1", ks: SPL.snap })}</g></g>`;
 
-  const waves = [
-    wave(CMP.contacts.apex, impact, 0.32, 1.9, 0.9),
-    wave(CMP.contacts.thumb, impact + 0.07, 0.3, 1.5, 0.8),
-  ].join("");
+  const waves = [wave(c.apex, impact, 0.32, 2.2, 0.9), wave(c.thumb, impact + 0.07, 0.3, 1.6, 0.8)].join("");
 
   return [
     `<g id="energy">`,
@@ -302,74 +443,51 @@ function energyAnimated() {
 }
 
 function domainAnimated() {
+  const h = CMP.poster.halo;
   return [
     `<g id="domain" filter="url(#hazeWarp)">`,
-    `<ellipse cx="480" cy="310" rx="340" ry="250" fill="url(#pressGrad)" opacity="0">${an(
+    `<ellipse cx="${h.cx}" cy="${h.cy}" rx="${h.rx}" ry="${h.ry}" fill="url(#pressGrad)" opacity="0">${an(
       "opacity",
-      "0;0.45;0.48;0.58;0.2;0.52;0.55;0.5;0",
+      "0;0.5;0.44;0.72;0.62",
       {
-        begin: 1.2,
-        dur: 4.65,
-        kt: "0;0.151;0.376;0.398;0.469;0.548;0.795;0.925;1",
-        ks: `${SPL.slow};${SPL.hold};${SPL.snap};${SPL.snap};${SPL.slow};${SPL.hold};${SPL.hold};${SPL.snap}`,
+        begin: 0.5,
+        dur: 5.0,
+        kt: "0;0.28;0.62;0.72;1",
+        ks: `${SPL.slow};${SPL.hold};${SPL.snap};${SPL.slow}`,
       }
-    )}${an("rx", "340;392", { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow })}${an("ry", "250;296", { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow })}</ellipse>`,
-    `<rect x="0" y="${CMP.envHorizonY - 2}" width="960" height="4" fill="url(#horizonGrad)" opacity="0">${an(
-      "opacity",
-      "0;0.85;0.85;0",
-      {
-        begin: 4.1,
-        dur: 1.75,
-        kt: "0;0.457;0.8;1",
-        ks: `${SPL.slow};${SPL.hold};${SPL.snap}`,
-      }
-    )}</rect>`,
+    )}${an("rx", `${h.rx};${h.rx + 56}`, { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow })}${an("ry", `${h.ry};${h.ry + 44}`, { begin: 4.1, dur: 0.8, kt: "0;1", ks: SPL.slow })}</ellipse>`,
     `</g>`,
   ].join("");
 }
 
-function identityStatic({ wordmarkStroke }) {
-  const wmSize = T.typography.display.wordmarkSize;
-  const wmLS = T.typography.display.wordmarkLetterSpacing;
-  const stSize = T.typography.mono.subtextSize;
-  const stLS = T.typography.mono.subtextLetterSpacing;
-  return [
-    `<g id="identity">`,
-    `<text x="${CMP.center.x}" y="${CMP.wordmarkBaseline}" text-anchor="middle" font-family="${DISPLAY_FONT}" font-size="${wmSize}" letter-spacing="${wmLS}" fill="url(#wordGrad)" stroke="${wordmarkStroke}" stroke-width="2.5" paint-order="stroke" stroke-linejoin="miter">${ID.wordmark}</text>`,
-    `<path d="M${CMP.center.x - CMP.tickHalfWidth} ${CMP.tickY} H${CMP.center.x + CMP.tickHalfWidth}" stroke="${C.rim}" stroke-width="2" opacity="0.9"/>`,
-    `<text x="${CMP.center.x}" y="${CMP.subtextBaseline}" text-anchor="middle" font-family="${MONO_FONT}" font-size="${stSize}" letter-spacing="${stLS}" fill="${C.rim}" opacity="0.88">${ID.subtext}</text>`,
-    `</g>`,
-  ].join("");
-}
-
+// Identity resolves into the dedicated lower lockup (composition.poster.lockup) so
+// the wordmark never crosses the seal silhouette. Reveal beats unchanged; persists.
 function identityAnimated() {
-  const wmSize = T.typography.display.wordmarkSize;
-  const wmLS = T.typography.display.wordmarkLetterSpacing;
-  const stSize = T.typography.mono.subtextSize;
+  const lk = CMP.poster.lockup;
   const stLS = T.typography.mono.subtextLetterSpacing;
   return [
     `<g id="identity">`,
-    `<g transform="translate(${CMP.center.x} ${CMP.wordmarkBaseline})">`,
+    `<g transform="translate(480 ${lk.wordmarkBaseline})">`,
     `<g>`,
     anT("scale", `0.9;${T.motion.impact.overshootScale};${T.motion.impact.settleScale}`, { begin: 5.9, dur: 0.5, kt: "0;0.4;1", ks: `${SPL.snap};${SPL.settle}` }),
     `<g opacity="0">`,
-    `<text x="0" y="0" text-anchor="middle" font-family="${DISPLAY_FONT}" font-size="${wmSize}" letter-spacing="${wmLS}" fill="url(#wordGrad)" stroke="${C.rim}" stroke-width="2.5" paint-order="stroke" stroke-linejoin="miter">${ID.wordmark}</text>`,
+    `<text x="0" y="0" text-anchor="middle" font-family="${DISPLAY_FONT}" font-size="${lk.wordmarkSize}" letter-spacing="${lk.wordmarkLetterSpacing}" fill="url(#wordGrad)" stroke="${C.rim}" stroke-width="2" paint-order="stroke" stroke-linejoin="miter">${ID.wordmark}</text>`,
     an("opacity", "0;1", { begin: 5.9, dur: 0.12, kt: "0;1", ks: SPL.snap }),
     an("stroke", `${C.peak};${C.peak};${C.rim}`, { begin: 5.9, dur: 0.35, kt: "0;0.3;1", ks: `${SPL.hold};${SPL.snap}` }),
     `</g>`,
     `</g>`,
     `</g>`,
-    `<g transform="translate(${CMP.center.x} ${CMP.tickY})">`,
+    `<g transform="translate(480 ${lk.ruleY})">`,
     `<g>`,
     anT("scale", "0 1;1 1", { begin: 6.08, dur: 0.14, kt: "0;1", ks: SPL.snap }),
     `<g opacity="0">`,
-    `<path d="M-${CMP.tickHalfWidth} 0 H${CMP.tickHalfWidth}" stroke="${C.rim}" stroke-width="2"/>`,
-    an("opacity", "0;0.9", { begin: 6.08, dur: 0.08, kt: "0;1", ks: SPL.snap }),
+    `<path d="M-${lk.ruleHalfWidth} 0 H${lk.ruleHalfWidth}" stroke="${C.rim}" stroke-width="2"/>`,
+    an("opacity", "0;0.85", { begin: 6.08, dur: 0.08, kt: "0;1", ks: SPL.snap }),
     `</g>`,
     `</g>`,
     `</g>`,
-    `<circle cx="${CMP.center.x}" cy="266" r="2.5" fill="${C.peak}" filter="url(#glowPeak)" opacity="0">${an("opacity", "0;1", { begin: 5.82, dur: 0.08, kt: "0;1", ks: SPL.snap })}${an("opacity", "1;0", { begin: 6.04, dur: 0.18, kt: "0;1", ks: SPL.snap })}${an("r", "2;5", { begin: 5.82, dur: 0.4, kt: "0;1", ks: SPL.settle })}</circle>`,
-    `<text x="${CMP.center.x}" y="${CMP.subtextBaseline}" text-anchor="middle" font-family="${MONO_FONT}" font-size="${stSize}" letter-spacing="${stLS}" fill="${C.rim}" opacity="0">${ID.subtext}${an("opacity", "0;0.88", { begin: 6.3, dur: 0.65, kt: "0;1", ks: SPL.slow })}</text>`,
+    `<circle cx="480" cy="${lk.ruleY}" r="2.5" fill="${C.peak}" filter="url(#glowPeak)" opacity="0">${an("opacity", "0;1", { begin: 5.82, dur: 0.08, kt: "0;1", ks: SPL.snap })}${an("opacity", "1;0", { begin: 6.04, dur: 0.18, kt: "0;1", ks: SPL.snap })}${an("r", "2;5", { begin: 5.82, dur: 0.4, kt: "0;1", ks: SPL.settle })}</circle>`,
+    `<text x="480" y="${lk.subtextBaseline}" text-anchor="middle" font-family="${MONO_FONT}" font-size="${lk.subtextSize}" letter-spacing="${stLS}" fill="${C.rim}" opacity="0">${ID.subtext}${an("opacity", "0;0.9", { begin: 6.3, dur: 0.65, kt: "0;1", ks: SPL.slow })}</text>`,
     `</g>`,
   ].join("");
 }
@@ -385,12 +503,12 @@ function buildHeroAnimated() {
     `<g id="scene">`,
     `<g transform="translate(${c.x} ${c.y})">`,
     `<g id="collapse-scale">`,
-    anT("scale", "1;0.88", { begin: 5.5, dur: 0.24, kt: "0;1", ks: SPL.snap }),
+    anT("scale", "1;0.965", { begin: 5.5, dur: 0.24, kt: "0;1", ks: SPL.snap }),
     `<g transform="translate(${-c.x} ${-c.y})">`,
     `<g id="scene-jitter">${anT("translate", "0 0;0.7 0.3;-0.6 0.4;0.5 -0.3;-0.7 0.2;0.6 0.5;-0.5 -0.3;0 0", { begin: 0.6, dur: 1.25, discrete: true })}`,
-    environmentAnimated(),
     domainAnimated(),
-    handSealGroupAnimated(),
+    shrineFrameAnimated(),
+    handSealAnimated(),
     energyAnimated(),
     `</g>`,
     `</g>`,
@@ -406,7 +524,7 @@ function buildHeroAnimated() {
     540,
     body,
     `${ID.wordmark} — domain expansion activation sequence`,
-    `Seven-second SMIL sequence: void, crimson pressure, reference-derived hand seal, contact flash, directional energy from the contact geometry, shrine reaction, hold, collapse, identity wordmark and subtext. No JavaScript.`
+    `Seven-second SMIL sequence: void, crimson pressure, reference-derived hand seal snapping in as the focal subject, contact flash, directional energy from the contact geometry, shrine gates framing, cinematic hold, gentle collapse, and the VISHVAS77 identity lockup — resolving to a persistent poster end-state. No JavaScript.`
   );
 }
 
@@ -414,22 +532,17 @@ function buildHeroStatic() {
   const body = [
     `<defs>`,
     defsShared({ forStatic: true }),
+    filtersStatic(),
     `</defs>`,
-    `<rect x="0" y="0" width="960" height="540" fill="url(#voidGrad)"/>`,
-    environmentStatic({ edgeStrokeOpacity: 0.4, fogOpacities: [0.3, 0.26] }),
-    sealShapesStatic(0.24),
-    `<ellipse cx="480" cy="560" rx="520" ry="180" fill="url(#pressGrad)" opacity="0.34"/>`,
-    `<rect x="0" y="${CMP.envHorizonY - 2}" width="960" height="4" fill="url(#horizonGrad)" opacity="0.28"/>`,
-    identityStatic({ wordmarkStroke: C.peak }),
-    `<rect x="0" y="0" width="960" height="540" fill="url(#vigGrad)" pointer-events="none"/>`,
+    posterComposition(),
   ].join("\n");
 
   return svgDoc(
     960,
     540,
     body,
-    `${ID.wordmark} — identity frame (static)`,
-    `Renderer-independent static fallback: complete identity composition with domain atmosphere, provisional hand-seal silhouette, wordmark and subtext. Contains zero animation elements.`
+    `${ID.wordmark} — identity poster (static)`,
+    `Renderer-independent static poster: the reference-derived hand seal as the focal subject over crimson domain pressure, dim flanking shrine gates, controlled residual energy from the contact geometry, and the VISHVAS77 identity lockup. Contains zero animation elements.`
   );
 }
 
@@ -796,7 +909,7 @@ function buildHandSealReview({ annotated }) {
   const a = HANDS.anchor;
   const body = [
     `<rect x="0" y="0" width="960" height="540" fill="#808080"/>`,
-    `<g transform="translate(${a.x} ${a.y})">${handInnerGeometry()}</g>`,
+    `<g transform="translate(${a.x} ${a.y})">${handInnerGeometry("review")}</g>`,
     annotated ? [
       `<line x1="${a.x}" y1="24" x2="${a.x}" y2="520" stroke="#000" stroke-width="1" stroke-dasharray="8 6"/>`,
       `<line x1="200" y1="${CMP.contacts.apex.y}" x2="760" y2="${CMP.contacts.apex.y}" stroke="#000" stroke-width="1" stroke-dasharray="4 6"/>`,
@@ -823,15 +936,13 @@ async function cmdReview() {
   }
 }
 
-function freezeEnv(fillOp, edgeOp) {
+function freezeShrine(fillMul, edgeOp) {
+  const { sf, L, R } = shrineFrameGeom();
   return [
-    `<g opacity="${fillOp}">`,
-    `<path d="${ENV.ground}" fill="${C.shadow}" fill-opacity="0.85"/>`,
-    `<path d="${ENV.toriiMain}" fill="${C.shadow}"/>`,
-    `<path d="${ENV.toriiL}" fill="${C.shadow}" fill-opacity="0.8"/>`,
-    `<path d="${ENV.toriiR}" fill="${C.shadow}" fill-opacity="0.8"/>`,
-    `</g>`,
-    `<path d="${ENV.toriiMain} ${ENV.toriiL} ${ENV.toriiR}" fill="none" stroke="${C.rim}" stroke-width="2" stroke-opacity="${edgeOp}"/>`,
+    `<path d="${ENV.ground}" fill="${C.shadow}" fill-opacity="${f(0.5 * fillMul)}"/>`,
+    `<path d="${L}" fill="${C.shadow}" fill-opacity="${f(sf.fillOpacity * fillMul)}"/>`,
+    `<path d="${R}" fill="${C.shadow}" fill-opacity="${f(sf.fillOpacity * fillMul)}"/>`,
+    `<path d="${L} ${R}" fill="none" stroke="${C.domain}" stroke-width="2" stroke-opacity="${edgeOp}"/>`,
   ].join("");
 }
 
@@ -846,38 +957,45 @@ function freezeHorizon(op) {
   return `<rect x="0" y="${CMP.envHorizonY - 2}" width="960" height="4" fill="url(#horizonGrad)" opacity="${op}"/>`;
 }
 
-function freezePressure(op, rx = 340, ry = 250) {
-  return `<ellipse cx="480" cy="310" rx="${rx}" ry="${ry}" fill="url(#pressGrad)" opacity="${op}"/>`;
-}
-
-function freezeShard(s, progress, op) {
-  return `<g transform="translate(${s.ox} ${s.oy}) rotate(${s.rotate})"><g transform="translate(0 ${-s.distance * progress})" opacity="${op}"><path d="${shardD(s.length, 6 + T.energy.shards.indexOf(s) * 2)}" fill="url(#shardGrad)"/></g></g>`;
+function freezeShardP(c, at, rotate, distance, length, idx, progress, op) {
+  const o = c[at];
+  return `<g transform="translate(${f(o.x)} ${f(o.y)}) rotate(${rotate})"><g transform="translate(0 ${f(-distance * progress)})" opacity="${op}"><path d="${shardD(length, 6 + idx * 2)}" fill="url(#shardGrad)"/></g></g>`;
 }
 
 function freezeFlash(pt, r, op) {
-  return `<circle cx="${pt.x}" cy="${pt.y}" r="${r}" fill="${C.peak}" filter="url(#glowPeak)" opacity="${op}"/>`;
+  return `<circle cx="${f(pt.x)}" cy="${f(pt.y)}" r="${r}" fill="${C.peak}" filter="url(#glowPeak)" opacity="${op}"/>`;
 }
 
 function freezeWave(pt, scale, op) {
-  return `<g transform="translate(${pt.x} ${pt.y}) scale(${scale})" opacity="${op}"><path d="M 3 -15 L 14 -8 L 11 -1 L 17 6 L 5 13 L -4 10 L -13 14 L -15 3 L -9 -4 L -13 -10 Z" fill="none" stroke="${C.rim}" stroke-width="2"/></g>`;
+  return `<g transform="translate(${f(pt.x)} ${f(pt.y)}) scale(${scale})" opacity="${op}"><path d="M 3 -15 L 14 -8 L 11 -1 L 17 6 L 5 13 L -4 10 L -13 14 L -15 3 L -9 -4 L -13 -10 Z" fill="none" stroke="${C.rim}" stroke-width="2"/></g>`;
 }
 
 function buildFreezeFrame(name) {
   const bg = `<rect x="0" y="0" width="960" height="540" fill="url(#voidGrad)"/>`;
   const vig = `<rect x="0" y="0" width="960" height="540" fill="url(#vigGrad)" pointer-events="none"/>`;
   const defs = `<defs>${defsShared({ forStatic: false })}${filtersAnimated()}</defs>`;
-  const hands = (op) => handSealGroupStatic(op);
-  const S = T.energy.shards;
+  const hands = (op) => handPlaced({ preset: "hero", opacity: op });
+  const c = posterContacts();
+  const sf = CMP.poster.shrineFrame;
+  // residual/hold energy shards, poster-space — matches the animated end-state
+  // (apex eruption + a persisting middle-contact side shard). No downward thumb
+  // energy, so the identity lockup stays clean in the hold/collapse/identity frames.
+  const holdShards = (op) => [
+    freezeShardP(c, "apex", -20, 300, 150, 1, 0.92, op),
+    freezeShardP(c, "middle", 80, 170, 70, 4, 0.9, op * 0.7),
+  ].join("");
 
   const scenes = {
     "1-void": [bg],
-    "2-reveal": [bg, freezeEnv(0.05, 0), freezePressure(0.45), hands(1)],
-    "3-contact": [bg, freezeEnv(0.05, 0), freezePressure(0.24), hands(1), freezeWave(CMP.contacts.apex, 1.25, 0.5), freezeWave(CMP.contacts.thumb, 1.0, 0.45), freezeFlash(CMP.contacts.apex, 12, 1), freezeFlash(CMP.contacts.thumb, 9, 0.9)],
-    "4-energy": [bg, freezeEnv(0.05, 0), freezePressure(0.52), hands(1), freezeShard(S[0], 0.6, 0.95), freezeShard(S[1], 0.35, 0.95), freezeShard(S[2], 0.6, 0.9), freezeShard(S[5], 0.5, 0.85), freezeShard(S[6], 0.5, 0.85)],
-    "5-environment": [bg, freezeEnv(0.62, 0.9), freezeFog(0.3, 0.26), freezeHorizon(0.85), freezePressure(0.55, 392, 296), hands(1)],
-    "6-hold": [bg, freezeEnv(0.62, 0.9), freezeFog(0.3, 0.26), freezeHorizon(0.85), freezePressure(0.55, 392, 296), hands(1), freezeShard(S[3], 0.85, 0.5), freezeShard(S[4], 0.85, 0.5)],
-    "7-collapse": [bg, `<g transform="translate(480 270)"><g transform="scale(0.92)"><g transform="translate(-480 -270)">`, freezeEnv(0.4, 0.5), freezeFog(0.15, 0.12), freezeHorizon(0.4), freezePressure(0.28, 392, 296), hands(0.55), freezeShard(S[3], 0.95, 0.25), freezeShard(S[4], 0.95, 0.25), `</g></g></g>`],
-    "8-identity": [bg, identityStatic({ wordmarkStroke: C.rim })],
+    "2-reveal": [bg, domainHalo(0.5), freezeShrine(0.1, 0), hands(1)],
+    "3-contact": [bg, domainHalo(0.45), freezeShrine(0.1, 0), hands(1), freezeWave(c.apex, 1.4, 0.5), freezeWave(c.thumb, 1.1, 0.45), freezeFlash(c.apex, 14, 1), freezeFlash(c.thumb, 10, 0.9)],
+    "4-energy": [bg, domainHalo(0.6), freezeShrine(0.1, 0), hands(1),
+      freezeShardP(c, "apex", -58, 132, 82, 0, 0.6, 0.9), freezeShardP(c, "apex", -20, 300, 150, 1, 0.55, 0.95), freezeShardP(c, "apex", 34, 150, 96, 2, 0.6, 0.9),
+      freezeShardP(c, "thumb", 150, 150, 80, 5, 0.5, 0.85), freezeShardP(c, "thumb", -152, 122, 66, 6, 0.5, 0.8)],
+    "5-environment": [bg, domainHalo(0.66), freezeShrine(1, sf.edgeOpacity), freezeFog(0.26, 0.22), freezeHorizon(0.3), hands(1)],
+    "6-hold": [bg, domainHalo(0.72), freezeShrine(1, sf.edgeOpacity), freezeFog(0.26, 0.22), freezeHorizon(0.3), hands(1), holdShards(0.85), freezeFlash(c.apex, 11, 0.95)],
+    "7-collapse": [bg, `<g transform="translate(480 270)"><g transform="scale(0.965)"><g transform="translate(-480 -270)">`, domainHalo(0.6), freezeShrine(0.7, sf.edgeOpacity * 0.7), freezeFog(0.16, 0.12), freezeHorizon(0.22), hands(1), holdShards(0.6), `</g></g></g>`],
+    "8-identity": [bg, domainHalo(0.72), freezeShrine(1, sf.edgeOpacity), freezeFog(0.26, 0.22), freezeHorizon(0.3), hands(1), holdShards(0.8), freezeFlash(c.apex, 11, 0.95), identityLockupStatic()],
   };
 
   const body = [defs, ...(scenes[name] ?? []), vig].join("\n");

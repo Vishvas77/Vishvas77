@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-26T09:56:23.435Z",
-  "tokensVersion": "1.1.0",
+  "generatedAt": "2026-08-26T11:40:40.838Z",
+  "tokensVersion": "1.2.1",
   "suites": {
     "assets": {
       "assets/hero/hero-animated.svg": {
         "exists": true,
-        "bytes": 18243,
-        "paths": 19,
+        "bytes": 17445,
+        "paths": 18,
         "filters": 3,
-        "anims": 42,
+        "anims": 37,
         "forbidden": [],
         "paletteViolations": [],
         "peakRefs": 5,
@@ -16,9 +16,9 @@
       },
       "assets/hero/hero-static.svg": {
         "exists": true,
-        "bytes": 5643,
-        "paths": 10,
-        "filters": 0,
+        "bytes": 7572,
+        "paths": 14,
+        "filters": 2,
         "anims": 0,
         "forbidden": [],
         "paletteViolations": [],
@@ -27,7 +27,7 @@
       },
       "assets/domain/shrine.svg": {
         "exists": true,
-        "bytes": 3395,
+        "bytes": 4152,
         "paths": 5,
         "filters": 0,
         "anims": 0,
@@ -71,7 +71,7 @@
       },
       "assets/identity/vishvas77-wordmark.svg": {
         "exists": true,
-        "bytes": 1957,
+        "bytes": 2744,
         "paths": 1,
         "filters": 0,
         "anims": 0,
@@ -225,7 +225,7 @@
     ],
     "png": {
       "exists": true,
-      "bytes": 178532,
+      "bytes": 278590,
       "width": 1920,
       "height": 1080
     },

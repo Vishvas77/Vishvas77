@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "vishvas77-profile-system",
-    "version": "1.1.0",
+    "version": "1.2.1",
     "canvas": { "width": 960, "height": 540 },
     "gridUnit": 8,
     "notes": "Single source of truth. Every SVG/PNG asset is generated from this file by scripts/build-tokens.mjs. Never hand-edit generated assets."
@@ -70,7 +70,32 @@
     "tickHalfWidth": 152,
     "subtextBaseline": 380,
     "envHorizonY": 424,
-    "fogBandY": 432
+    "fogBandY": 432,
+    "poster": {
+      "notes": "Poster-frame layout: the reference-derived seal is the hero, lifted into the upper-center and scaled uniformly (proportions preserved); the identity wordmark drops into a dedicated lower lockup so it never crosses the silhouette; the shrine is reduced to two dim flanking gates that frame rather than compete.",
+      "hand": {
+        "cx": 480,
+        "topY": 60,
+        "scale": 0.92,
+        "localContacts": { "apex": [0, 4], "middle": [0, 50], "thumb": [0, 211] }
+      },
+      "halo": { "cx": 480, "cy": 150, "rx": 250, "ry": 232 },
+      "shrineFrame": {
+        "left": { "cx": 188, "w": 116, "lintelY": 246, "baseY": 430 },
+        "right": { "cx": 772, "w": 116, "lintelY": 246, "baseY": 430 },
+        "fillOpacity": 0.42,
+        "edgeOpacity": 0.5
+      },
+      "lockup": {
+        "ruleY": 372,
+        "ruleHalfWidth": 150,
+        "wordmarkBaseline": 434,
+        "wordmarkSize": 52,
+        "wordmarkLetterSpacing": 5,
+        "subtextBaseline": 470,
+        "subtextSize": 15
+      }
+    }
   },
   "energy": {
     "irregularityRule": "bursts are directional and asymmetric, emitted from the actual contact geometry (apex / middle / thumb); radial symmetry is banned",

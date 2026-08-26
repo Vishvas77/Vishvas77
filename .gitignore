@@ -15,6 +15,7 @@ preview*.jpeg
 
 # Generated local inspection outputs
 *.log
+analysis/live/
 
 # OS / editor
 .DS_Store

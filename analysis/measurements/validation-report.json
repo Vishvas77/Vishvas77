@@ -1,0 +1,256 @@
+{
+  "generatedAt": "2026-08-26T09:56:23.435Z",
+  "tokensVersion": "1.1.0",
+  "suites": {
+    "assets": {
+      "assets/hero/hero-animated.svg": {
+        "exists": true,
+        "bytes": 18243,
+        "paths": 19,
+        "filters": 3,
+        "anims": 42,
+        "forbidden": [],
+        "paletteViolations": [],
+        "peakRefs": 5,
+        "syncWithTokens": true
+      },
+      "assets/hero/hero-static.svg": {
+        "exists": true,
+        "bytes": 5643,
+        "paths": 10,
+        "filters": 0,
+        "anims": 0,
+        "forbidden": [],
+        "paletteViolations": [],
+        "peakRefs": 1,
+        "syncWithTokens": true
+      },
+      "assets/domain/shrine.svg": {
+        "exists": true,
+        "bytes": 3395,
+        "paths": 5,
+        "filters": 0,
+        "anims": 0,
+        "forbidden": [],
+        "paletteViolations": [],
+        "peakRefs": 0,
+        "syncWithTokens": true
+      },
+      "assets/separators/divider-primary.svg": {
+        "exists": true,
+        "bytes": 1135,
+        "paths": 2,
+        "filters": 0,
+        "anims": 0,
+        "forbidden": [],
+        "paletteViolations": [],
+        "peakRefs": 1,
+        "syncWithTokens": true
+      },
+      "assets/separators/divider-arc.svg": {
+        "exists": true,
+        "bytes": 1094,
+        "paths": 2,
+        "filters": 0,
+        "anims": 0,
+        "forbidden": [],
+        "paletteViolations": [],
+        "peakRefs": 1,
+        "syncWithTokens": true
+      },
+      "assets/separators/spine-evidence.svg": {
+        "exists": true,
+        "bytes": 2946,
+        "paths": 8,
+        "filters": 0,
+        "anims": 0,
+        "forbidden": [],
+        "paletteViolations": [],
+        "peakRefs": 1,
+        "syncWithTokens": true
+      },
+      "assets/identity/vishvas77-wordmark.svg": {
+        "exists": true,
+        "bytes": 1957,
+        "paths": 1,
+        "filters": 0,
+        "anims": 0,
+        "forbidden": [],
+        "paletteViolations": [],
+        "peakRefs": 1,
+        "syncWithTokens": true
+      }
+    },
+    "smilStoryboard": [
+      {
+        "beat": "VOID",
+        "boundary": 0,
+        "nearestSmil": 0,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "VOID",
+        "boundary": 0.5,
+        "nearestSmil": 0.5,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "PRESSURE",
+        "boundary": 0.5,
+        "nearestSmil": 0.5,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "PRESSURE",
+        "boundary": 1.9,
+        "nearestSmil": 1.9,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "HAND_REVEAL",
+        "boundary": 1.9,
+        "nearestSmil": 1.9,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "HAND_REVEAL",
+        "boundary": 2.4,
+        "nearestSmil": 2.35,
+        "delta": "0.05",
+        "ok": true
+      },
+      {
+        "beat": "SILENCE",
+        "boundary": 2.4,
+        "nearestSmil": 2.35,
+        "delta": "0.05",
+        "ok": true
+      },
+      {
+        "beat": "SILENCE",
+        "boundary": 3,
+        "nearestSmil": 3,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "CONTACT_IMPACT",
+        "boundary": 3,
+        "nearestSmil": 3,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "CONTACT_IMPACT",
+        "boundary": 3.35,
+        "nearestSmil": 3.35,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "CURSED_ENERGY",
+        "boundary": 3.35,
+        "nearestSmil": 3.35,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "CURSED_ENERGY",
+        "boundary": 4.1,
+        "nearestSmil": 4.1,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "ENVIRONMENT_REACTION",
+        "boundary": 4.1,
+        "nearestSmil": 4.1,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "ENVIRONMENT_REACTION",
+        "boundary": 4.9,
+        "nearestSmil": 4.9,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "HOLD",
+        "boundary": 4.9,
+        "nearestSmil": 4.9,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "HOLD",
+        "boundary": 5.5,
+        "nearestSmil": 5.5,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "COLLAPSE",
+        "boundary": 5.5,
+        "nearestSmil": 5.5,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "COLLAPSE",
+        "boundary": 5.9,
+        "nearestSmil": 5.9,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "IDENTITY_REVEAL",
+        "boundary": 5.9,
+        "nearestSmil": 5.9,
+        "delta": "0",
+        "ok": true
+      },
+      {
+        "beat": "IDENTITY_REVEAL",
+        "boundary": 7,
+        "nearestSmil": 6.95,
+        "delta": "0.05",
+        "ok": true
+      }
+    ],
+    "png": {
+      "exists": true,
+      "bytes": 178532,
+      "width": 1920,
+      "height": 1080
+    },
+    "readme": {
+      "imageRefs": [
+        "assets/hero/hero-animated.svg",
+        "assets/separators/divider-primary.svg",
+        "assets/separators/divider-arc.svg",
+        "assets/separators/spine-evidence.svg",
+        "assets/badges/Vishvas77__ResearchCompass-AI.svg",
+        "assets/badges/Vishvas77__memory-allocator-simulator.svg",
+        "assets/hero/hero-static.png",
+        "assets/hero/hero-static.svg"
+      ]
+    },
+    "gates": {
+      "handSeal": "REFERENCE_DERIVED",
+      "sources": [
+        "analysis/reference/01_front_handseal.png",
+        "analysis/reference/02_threequarter_handseal.png",
+        "analysis/reference/03_side_handseal.png",
+        "analysis/reference/04_fingertip_contact_closeup.png"
+      ],
+      "badges": "evidence-linked only: a badge is emitted exclusively for a real, existing repository supplied via badges manifest; none are emitted until real repo data is provided"
+    }
+  },
+  "overall": "PASS"
+}

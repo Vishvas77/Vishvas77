@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build / temporary files
+tmp/
+temp/
+.cache/
+*.tmp
+
+# Local preview artifacts
+preview*.html
+preview*.png
+preview*.jpg
+preview*.jpeg
+
+# Generated local inspection outputs
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

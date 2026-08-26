@@ -1,0 +1,21 @@
+VALIDATION PASS — 2026-08-26T09:56:23.435Z (tokens v1.1.0)
+assets/hero/hero-animated.svg: bytes=18243 paths=19/40 filters=3/3 anims=42 peakRefs=5 sync=true violations=[] forbidden=[]
+assets/hero/hero-static.svg: bytes=5643 paths=10/40 filters=0/3 anims=0 peakRefs=1 sync=true violations=[] forbidden=[]
+assets/domain/shrine.svg: bytes=3395 paths=5/40 filters=0/3 anims=0 peakRefs=0 sync=true violations=[] forbidden=[]
+assets/separators/divider-primary.svg: bytes=1135 paths=2/40 filters=0/3 anims=0 peakRefs=1 sync=true violations=[] forbidden=[]
+assets/separators/divider-arc.svg: bytes=1094 paths=2/40 filters=0/3 anims=0 peakRefs=1 sync=true violations=[] forbidden=[]
+assets/separators/spine-evidence.svg: bytes=2946 paths=8/40 filters=0/3 anims=0 peakRefs=1 sync=true violations=[] forbidden=[]
+assets/identity/vishvas77-wordmark.svg: bytes=1957 paths=1/40 filters=0/3 anims=0 peakRefs=1 sync=true violations=[] forbidden=[]
+smil storyboard coverage: 20/20 boundaries within ±0.15s
+png: {"exists":true,"bytes":178532,"width":1920,"height":1080}
+readme image refs: ["assets/hero/hero-animated.svg","assets/separators/divider-primary.svg","assets/separators/divider-arc.svg","assets/separators/spine-evidence.svg","assets/badges/Vishvas77__ResearchCompass-AI.svg","assets/badges/Vishvas77__memory-allocator-simulator.svg","assets/hero/hero-static.png","assets/hero/hero-static.svg"]
+gates: {
+  "handSeal": "REFERENCE_DERIVED",
+  "sources": [
+    "analysis/reference/01_front_handseal.png",
+    "analysis/reference/02_threequarter_handseal.png",
+    "analysis/reference/03_side_handseal.png",
+    "analysis/reference/04_fingertip_contact_closeup.png"
+  ],
+  "badges": "evidence-linked only: a badge is emitted exclusively for a real, existing repository supplied via badges manifest; none are emitted until real repo data is provided"
+}

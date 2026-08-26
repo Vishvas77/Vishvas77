@@ -1,58 +1,168 @@
-<!--
-  TECHNIQUE: hand-authored SMIL SVG referenced via <img>, not a typing-SVG header and not
-  inlined raw <svg> markup. Referenced-as-image means GitHub serves it as a static asset
-  instead of running it through the README HTML sanitizer, so the full SMIL animation
-  (animateTransform, animate) survives untouched — that's the actual trick, not the Naruto skin.
--->
 <div align="center">
-  <img src="./assets/rasengan_scroll.svg" width="900" alt="Vishvas77 — spinning rasengan next to an unrolling rank scroll" />
+  <img src="assets/hero/hero-animated.svg" alt="Domain expansion activation sequence, resolving to identity mark VISHVAS77" width="100%" />
 </div>
 
-<!--
-  TECHNIQUE: animated stroke-dashoffset divider instead of <hr> or an emoji line, so every
-  section reads as one continuous flow of chakra instead of stacked, disconnected widgets.
--->
 <div align="center">
-  <img src="./assets/chakra_flow.svg" width="900" height="24" alt="" />
+  <img src="assets/separators/divider-primary.svg" alt="" width="100%" />
 </div>
 
-## Rank Log
+## VISHVAS77
 
-<!-- Ranks are gated on shipped repos, not on adjectives — a generic skills table can't be checked, a linked repo can. -->
+`AI SYSTEMS · SALESFORCE · SYSTEMS`
 
-| Rank | Unlocked by | What it actually proves |
-|---|---|---|
-| 🎓 Academy Student | [`java-programs`](https://github.com/Vishvas77/java-programs) · [`python-programs`](https://github.com/Vishvas77/python-programs) · C++ lab-programs | OOP, collections, JDBC, file handling, control flow, exceptions — the katas, not the mission |
-| 🥋 Genin | [`memory-allocator-simulator`](https://github.com/Vishvas77/memory-allocator-simulator) (C) | First Fit / Best Fit / Worst Fit allocation, a visual memory map, fragmentation metrics, and a rule-based ranker — first solo mission into systems programming |
-| ⚡ Chunin | AI research-matching assistant (Python) | RAG + LangGraph + vector search to match students with faculty and recommend research projects — the exam that requires combining jutsu, not executing one |
-| 🌀 Jonin-track — *in progress* | Salesforce development + multi-agent AI pipelines shipped at hackathons | Ongoing. No rank-up ceremony for this one yet — still training |
+I build AI systems — retrieval, orchestration, agents — plus the systems-level code beneath them. Salesforce platform work is my declared track; public evidence for it is still pending. This profile runs on one rule: **every claim resolves to a repository, or it does not ship.** Nothing here is self-certified.
 
 <div align="center">
-  <img src="./assets/chakra_flow.svg" width="900" height="24" alt="" />
+  <img src="assets/separators/divider-arc.svg" alt="" width="100%" />
 </div>
 
-## Training Grounds
+## CURRENT ARC · ACTIVE MISSION
 
-<!--
-  TECHNIQUE: github-profile-3d-contrib instead of a standard 2D contribution graph or a stat-card —
-  an isometric render of real commit data is evidence of hours logged, not a decorative badge,
-  and the accompanying Action means it stays current without a manual edit.
--->
+> Work in flight. Nothing in this section is finished, ranked, or claimed — it trains in public until it ships.
+
 <div align="center">
-  <img src="./profile-3d-contrib/profile-night-green.svg" width="900" alt="3D isometric contribution calendar" />
+  <img src="assets/separators/spine-evidence.svg" alt="PROJECT to TECHNOLOGY to PROBLEM to RESULT to EVIDENCE" width="100%" />
 </div>
 
-<p align="center"><sub>95 contributions in the past year. 1 follower. Academy-level following, Genin-level output — the repos above carry this profile, the follower count doesn't.</sub></p>
+| field | value |
+| --- | --- |
+| `mission` | *[pending — the active build, named]* |
+| `objective` | *[pending — what "done" looks like]* |
+| `status` | `IN_PROGRESS` |
+| `technology` | *[pending]* |
+| `evidence` | *[pending — repository link lands here when the work is real]* |
 
-## Current Arc
+<div align="center">
+  <img src="assets/separators/divider-primary.svg" alt="" width="100%" />
+</div>
 
-Two threads running in parallel, both deliberate, neither finished:
+## STRONGEST PROJECTS
 
-- **Salesforce development** — Apex, Flow, platform-native automation.
-- **AI agent systems** — multi-agent pipelines built for hackathons (delay prediction, SLA-breach detection, network scoring on supply-chain use cases), plus RAG pipelines that reason over retrieval instead of just returning it.
+Every project on this profile is told in the same five beats — no exceptions, no adjectives without artifacts:
 
-No Jonin badge on this page. That rank isn't awarded, it's checked — look at the commit history above, not this paragraph.
+<div align="center">
+  <img src="assets/separators/spine-evidence.svg" alt="PROJECT to TECHNOLOGY to PROBLEM to RESULT to EVIDENCE" width="100%" />
+</div>
 
----
+### `ResearchCompass-AI`
 
-<p align="center"><sub>Every rank in the table links to the repo that unlocked it. Unlinked claims don't go on this page.</sub></p>
+| stage | entry |
+| --- | --- |
+| `PROJECT` | [ResearchCompass-AI](https://github.com/Vishvas77/ResearchCompass-AI#readme) — AI research-matching assistant · team project (Team AI For Good, credits in repo) |
+| `TECHNOLOGY` | Python · LangChain (RAG) · LangGraph (workflow orchestration) · ChromaDB (vector DB) · OpenAI · Tavily (live search) · Semantic Scholar API |
+| `PROBLEM` | Students have no structured way to discover matching faculty, research gaps, or collaboration opportunities |
+| `RESULT` | Working CLI system with 12 documented capabilities — faculty recommendation, hybrid RAG semantic search, paper retrieval, research-gap analysis, outreach-email generation with a human-confirmation step |
+| `EVIDENCE` | [README + source](https://github.com/Vishvas77/ResearchCompass-AI#readme) — install/run instructions, architecture, 8-commit history on `main` |
+
+### `memory-allocator-simulator`
+
+| stage | entry |
+| --- | --- |
+| `PROJECT` | [memory-allocator-simulator](https://github.com/Vishvas77/memory-allocator-simulator#readme) — C11 memory-management laboratory · team project (credits in repo) · MIT |
+| `TECHNOLOGY` | C11 · doubly linked lists · GCC / Make · GitHub Actions CI · zero external dependencies |
+| `PROBLEM` | Allocation strategies are usually taught as theory — first/best/worst-fit fragmentation behavior is rarely observable |
+| `RESULT` | Working simulator: 3 allocation strategies, block splitting + coalescing, ASCII memory map, exact internal/external fragmentation metrics, workload-replay compare mode with a rule-based strategy ranker |
+| `EVIDENCE` | [README + source](https://github.com/Vishvas77/memory-allocator-simulator#readme) — 26-commit history, CI workflows, MIT license in-repo |
+
+<div align="center">
+  <img src="assets/separators/divider-primary.svg" alt="" width="100%" />
+</div>
+
+## ENGINEERING DEPTH
+
+Depth is claimed only where evidence exists. Everything else stays open.
+
+| domain | depth claim | evidence |
+| --- | --- | --- |
+| AI systems — RAG, agents, vector search | built a working RAG assistant with an orchestrated LangGraph workflow and vector database | [ResearchCompass-AI](https://github.com/Vishvas77/ResearchCompass-AI#readme) |
+| systems programming — C11, allocators | built a modular allocator simulator with fragmentation metrics and strategy comparison | [memory-allocator-simulator](https://github.com/Vishvas77/memory-allocator-simulator#readme) |
+| Core Java — OOP, Collections, Swing, JDBC | documented lab-exercise and mini-project collection | [java-programs](https://github.com/Vishvas77/java-programs) |
+| Python fundamentals | documented lab-experiment collection | [python-programs](https://github.com/Vishvas77/python-programs) |
+| C++ fundamentals | week-wise academic program archive | [cpp-programs](https://github.com/Vishvas77/cpp-programs) |
+| Salesforce platform | declared track — repository evidence pending | *[pending]* |
+
+<div align="center">
+  <img src="assets/separators/divider-primary.svg" alt="" width="100%" />
+</div>
+
+## EVIDENCE-GATED PROGRESSION
+
+Ranks are outputs, not goals. A tier unlocks only when a real repository proves it — and each unlocked tier mints a hexagonal badge generated from the same design tokens as this page.
+
+| tier | unlock requirement | status |
+| --- | --- | --- |
+| `TIER I` | one shipped repository with a documented PROBLEM → RESULT | `UNLOCKED` — [ResearchCompass-AI](https://github.com/Vishvas77/ResearchCompass-AI#readme) |
+| `TIER II` | three repositories across distinct problems | `UNLOCKED` — [ResearchCompass-AI](https://github.com/Vishvas77/ResearchCompass-AI#readme) · [memory-allocator-simulator](https://github.com/Vishvas77/memory-allocator-simulator#readme) · [python-programs](https://github.com/Vishvas77/python-programs) |
+| `TIER III` | sustained multi-repository track record, all evidence-linked | `LOCKED` |
+
+<div align="center">
+  <img src="assets/badges/Vishvas77__ResearchCompass-AI.svg" alt="Tier I badge — evidence: ResearchCompass-AI" width="120" />
+  &nbsp;&nbsp;
+  <img src="assets/badges/Vishvas77__memory-allocator-simulator.svg" alt="Tier II badge — evidence: memory-allocator-simulator" width="120" />
+</div>
+
+```text
+badges emitted: 2 · policy: no repository, no badge
+```
+
+<div align="center">
+  <img src="assets/separators/divider-primary.svg" alt="" width="100%" />
+</div>
+
+## STACK / TOOLS
+
+**Evidence-backed:**
+
+`Python` · `LangChain` · `LangGraph` · `ChromaDB` · `OpenAI API` · `Tavily` · `Semantic Scholar API` · `C11` · `Java (Core · OOP · Collections · Swing · JDBC)` · `C++` · `GitHub Actions`
+
+**Declared track, evidence pending:** `SALESFORCE PLATFORM`
+
+<div align="center">
+  <img src="assets/separators/divider-primary.svg" alt="" width="100%" />
+</div>
+
+## LINKS
+
+- [`github.com/VISHVAS77`](https://github.com/VISHVAS77)
+- [`ResearchCompass-AI`](https://github.com/Vishvas77/ResearchCompass-AI) — AI research-matching assistant
+- [`memory-allocator-simulator`](https://github.com/Vishvas77/memory-allocator-simulator) — C11 allocator laboratory
+- [`java-programs`](https://github.com/Vishvas77/java-programs) · [`python-programs`](https://github.com/Vishvas77/python-programs) · [`cpp-programs`](https://github.com/Vishvas77/cpp-programs) — foundations collections
+
+<div align="center">
+  <img src="assets/separators/divider-primary.svg" alt="" width="100%" />
+</div>
+
+## SYSTEM
+
+This profile is a token-driven build, not hand-maintained markup.
+
+- `design-tokens.json` — single source of truth for palette, motion language, timeline, composition, budgets
+- `scripts/build-tokens.mjs` — generates every SVG and the rasterized fallback from those tokens
+- `.github/workflows/validate-hero.yml` — CI enforces path counts, filter counts, file-size budgets, token purity, storyboard timing, and README image integrity on every push
+
+<details>
+<summary>Static hero fallback (no animation)</summary>
+<br />
+
+<div align="center">
+  <img src="assets/hero/hero-static.png" alt="Static identity frame: hand seal over shrine atmosphere, resolving to VISHVAS77" width="100%" />
+</div>
+
+If the animated hero does not play in your context, this is the complete composition — same design tokens, zero animation dependency. A vector version lives at `assets/hero/hero-static.svg`.
+
+</details>
+
+<details>
+<summary>Build status</summary>
+
+```text
+hand-seal geometry : REFERENCE-DERIVED — reconstructed from 4-shot reference set
+                    (front / three-quarter / side / fingertip-contact)
+review log         : analysis/comparisons/hand-seal-gate.md
+cinematic pass     : PHASE 2 LOCKED (8-frame render inspection)
+rank badges        : 2 emitted — evidence-linked to unlocked tiers
+shipped projects   : 2 flagship + 3 foundations collections ingested
+current arc        : awaiting operator-declared in-progress work
+```
+
+</details>

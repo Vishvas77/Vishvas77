@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/hero/hero-animated.svg" alt="Domain expansion activation sequence, resolving to identity mark VISHVAS77" width="100%" />
+  <img src="assets/hero/hero-poster.png" alt="VISHVAS77 — cinematic domain hero: character, shrine, and identity in one composition" width="100%" />
 </div>
 
 <div align="center">
@@ -134,21 +134,23 @@ badges emitted: 2 · policy: no repository, no badge
 
 ## SYSTEM
 
-This profile is a token-driven build, not hand-maintained markup.
+This profile is a token-driven build for its generated components, with a supplied cinematic hero.
 
-- `design-tokens.json` — single source of truth for palette, motion language, timeline, composition, budgets
-- `scripts/build-tokens.mjs` — generates every SVG and the rasterized fallback from those tokens
-- `.github/workflows/validate-hero.yml` — CI enforces path counts, filter counts, file-size budgets, token purity, storyboard timing, and README image integrity on every push
+- `assets/hero/hero-poster.png` — the approved cinematic hero: a frame from `domain-cutscene.mp4` with `VISHVAS77` integrated into the scene
+- `assets/hero/domain-cutscene.mp4` — master source for the local cinematic preview (`assets/hero/preview.html`)
+- `design-tokens.json` — single source of truth for palette, typography, composition, budgets
+- `scripts/build-tokens.mjs` — generates separators, identity, and badge SVGs from those tokens
+- `.github/workflows/validate-hero.yml` — CI enforces asset integrity and README image references on every push
 
 <details>
-<summary>Static hero fallback (no animation)</summary>
+<summary>Static hero (GitHub profile view)</summary>
 <br />
 
 <div align="center">
-  <img src="assets/hero/hero-static.png" alt="Static identity frame: hand seal over shrine atmosphere, resolving to VISHVAS77" width="100%" />
+  <img src="assets/hero/hero-poster.png" alt="VISHVAS77 — cinematic domain hero: character, shrine, and identity in one composition" width="100%" />
 </div>
 
-If the animated hero does not play in your context, this is the complete composition — same design tokens, zero animation dependency. A vector version lives at `assets/hero/hero-static.svg`.
+On GitHub the profile shows this static cinematic poster. The full motion cutscene plays in the local preview (`assets/hero/preview.html`) and from the source `assets/hero/domain-cutscene.mp4`.
 
 </details>
 

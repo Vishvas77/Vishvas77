@@ -1,0 +1,118 @@
+{
+  "identity": {
+    "name": "VISHVAS77",
+    "subtitle": "AI SYSTEMS · SALESFORCE · SYSTEMS",
+    "github": "https://github.com/Vishvas77",
+    "linkedin": "https://www.linkedin.com/in/vishvas-polepaka-721349306/",
+    "email": "polepakavishvas@gmail.com"
+  },
+  "hero": {
+    "strategy": "static_poster",
+    "posterFile": "assets/poster.png",
+    "aspectRatio": "16:9",
+    "dimensions": "1920x1080",
+    "alt": "VISHVAS77 — AI Systems · Salesforce · Systems"
+  },
+  "domains": [
+    {
+      "name": "AI Systems",
+      "capabilities": ["RAG", "LangGraph Orchestration", "ChromaDB Vector Search", "Semantic Retrieval"]
+    },
+    {
+      "name": "Systems Programming",
+      "capabilities": ["C11", "Memory Allocation Policies", "Heap Fragmentation Analysis", "Runtime Diagnostics"]
+    },
+    {
+      "name": "Platform Engineering",
+      "capabilities": ["Salesforce experience — details pending confirmation."]
+    },
+    {
+      "name": "Core Engineering",
+      "capabilities": ["Python", "C", "C++", "Java", "Data Structures", "CI Workflows"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "research-compass-ai",
+      "name": "ResearchCompass-AI",
+      "problem": "Identifying faculty research alignments and navigating academic domains is fragmented, manual, and slow.",
+      "solution": "An intelligent academic discovery assistant featuring hybrid RAG semantic search, stateful LangGraph agent orchestration, live paper retrieval, and faculty workload heuristics.",
+      "stack": ["Python 3.11", "LangChain", "LangGraph", "ChromaDB", "OpenAI API", "Tavily", "Semantic Scholar API"],
+      "repoUrl": "https://github.com/Vishvas77/ResearchCompass-AI",
+      "architecture": [
+        "Stateful Agent Workflow: Multi-node LangGraph state machine orchestrating query routing, paper fetching, and response synthesis.",
+        "Hybrid RAG & Vector Indexing: ChromaDB vector store indexing faculty research domains and publications for semantic similarity matching.",
+        "Dynamic Academic Search: Integrates Semantic Scholar REST API with Tavily live web retrieval for current literature discovery.",
+        "Workload & Outreach Engine: Automated faculty availability heuristics paired with personalized email draft generation."
+      ]
+    },
+    {
+      "id": "memory-allocator-simulator",
+      "name": "Memory Allocator Simulator",
+      "problem": "Analyzing dynamic memory allocation policies, heap fragmentation, and allocation failures under arbitrary workloads requires deep runtime visibility.",
+      "solution": "A modular C11 memory management laboratory simulating a fixed 1024-byte pool, implementing dynamic block splitting, instant adjacent block coalescing, real-time ASCII heap topology visualization, and single-pass fragmentation diagnostics.",
+      "stack": ["C (C11)", "Make", "GCC/Clang", "GDB", "Valgrind", "GitHub Actions"],
+      "repoUrl": "https://github.com/Vishvas77/memory-allocator-simulator",
+      "architecture": [
+        "Block Topology: Doubly linked list block header architecture enabling O(1) neighbor traversal for instant coalescing.",
+        "Fragmentation Reduction: Dynamic block splitting reduces internal waste on oversized matches; adjacent block coalescing recovers contiguous free space upon deallocation.",
+        "Strategy Engine: Comparative analysis across First Fit (fast traversal), Best Fit (exact sizing), and Worst Fit (stress testing).",
+        "Diagnostics: Single O(N) pass metrics engine calculating internal/external fragmentation percentages and largest contiguous block availability."
+      ]
+    }
+  ],
+  "progression": {
+    "currentTier": "ARCHITECT",
+    "tiers": [
+      {
+        "id": 1,
+        "name": "FOUNDATION",
+        "description": "First public repositories. Multi-language core fundamentals.",
+        "unlocked": true,
+        "evidence": [
+          "https://github.com/Vishvas77/python-programs",
+          "https://github.com/Vishvas77/java-programs",
+          "https://github.com/Vishvas77/cpp-programs"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "SYSTEMS",
+        "description": "Low-level C11 memory allocator, dynamic block splitting, coalescing, and heap inspection.",
+        "unlocked": true,
+        "evidence": [
+          "https://github.com/Vishvas77/memory-allocator-simulator"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "ARCHITECT",
+        "description": "Stateful agent orchestration, LangGraph workflows, and hybrid RAG architecture.",
+        "unlocked": true,
+        "evidence": [
+          "https://github.com/Vishvas77/ResearchCompass-AI"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "DOMAIN",
+        "description": "Production-grade distributed systems & sustained volume.",
+        "unlocked": false,
+        "evidence": []
+      },
+      {
+        "id": 5,
+        "name": "EXPANSION",
+        "description": "Open-source ecosystem impact & community package distribution.",
+        "unlocked": false,
+        "evidence": []
+      }
+    ]
+  },
+  "stack": {
+    "AI & ML": ["Python 3.11", "LangChain", "LangGraph", "ChromaDB", "OpenAI API", "Tavily", "RAG", "Vector Search"],
+    "Systems": ["C (C11)", "C++", "Memory Allocation", "Data Structures", "Make", "GDB", "Valgrind"],
+    "Core": ["Python", "C", "C++", "Java", "JavaScript", "SQL / JDBC"],
+    "Infrastructure": ["Git", "GitHub Actions", "Linux Tooling", "GCC/Clang"]
+  }
+}

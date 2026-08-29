@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 184" width="160" height="184" role="img" aria-labelledby="tt dd">
-<title id="tt">TIER II</title>
-<desc id="dd">Evidence-linked rank badge for Vishvas77/memory-allocator-simulator.</desc>
-<defs><linearGradient id="hexGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#C4142E"/><stop offset="100%" stop-color="#8B0015"/></linearGradient></defs><polygon points="80,16 145.818,54 145.818,130 80,168 14.182,130 14.182,54" fill="#08030A" fill-opacity="0.94" stroke="url(#hexGrad)" stroke-width="3"/><polygon points="80,28 135.426,60 135.426,124 80,156 24.574,124 24.574,60" fill="none" stroke="#8B0015" stroke-width="1" stroke-dasharray="7 6" opacity="0.7"/><text x="80" y="88" text-anchor="middle" font-family="'Archivo Black', Oswald, 'Arial Black', 'Helvetica Neue', sans-serif" font-size="24" letter-spacing="2" fill="#C4142E">TIER II</text><text x="80" y="116" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, 'Courier New', monospace" font-size="9" letter-spacing="1" fill="#8B0015" opacity="0.85">Vishvas77</text><text x="80" y="132" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', Consolas, 'Courier New', monospace" font-size="5" fill="#8B0015">memory-allocator-simulator</text>
-</svg>

@@ -1,23 +1,28 @@
-# Dependencies
+# Dependency directories
 node_modules/
+jspm_packages/
 
-# Build / temporary files
-tmp/
-temp/
-.cache/
-*.tmp
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
 
-# Local preview artifacts
-preview*.html
-preview*.png
-preview*.jpg
-preview*.jpeg
-
-# Generated local inspection outputs
-*.log
-analysis/live/
-
-# OS / editor
+# OS and Editor metadata
 .DS_Store
 Thumbs.db
 .vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary and build artifacts
+dist/
+build/
+*.tmp
+*.log
+
+# Source media preserved locally only
+assets/media/*
+!assets/media/.gitkeep

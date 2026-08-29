@@ -3,7 +3,7 @@ import sys, os, json, re
 from PIL import Image
 
 def validate():
-    print("=== RUNNING VISHVAS77 HERO & REPO CONTRACT VALIDATION ===")
+    print("=== RUNNING VISHVAS77 REPO & ASSET CONTRACT VALIDATION ===")
     errors = []
 
     # 1. Validate primary animated hero
@@ -41,7 +41,17 @@ def validate():
         if sz > 1500:
             errors.append(f"{poster_path} size {sz:.1f} KB exceeds 1.5 MB limit")
 
-    # 3. Validate README markup
+    # 3. Validate custom contributions SVG
+    contrib_path = "assets/contributions.svg"
+    if not os.path.exists(contrib_path):
+        errors.append(f"Missing custom contributions SVG: {contrib_path}")
+    else:
+        sz = os.path.getsize(contrib_path) / 1024
+        print(f"Contributions Asset: {contrib_path} ({sz:.1f} KB)")
+        if sz > 250:
+            errors.append(f"{contrib_path} size {sz:.1f} KB exceeds 250 KB limit")
+
+    # 4. Validate README markup
     readme_path = "README.md"
     if not os.path.exists(readme_path):
         errors.append(f"Missing {readme_path}")
@@ -52,15 +62,15 @@ def validate():
         # Check hero markup contains direct <img> tag for hero.webp
         if 'src="./assets/hero.webp"' not in content:
             errors.append("README.md does not reference ./assets/hero.webp in src attribute")
-        if "<picture>" in content:
-            errors.append("README.md should not use <picture> tag for hero animation to avoid GitHub Catalyst hijacking")
+        if 'src="./assets/contributions.svg"' not in content:
+            errors.append("README.md does not reference ./assets/contributions.svg")
             
         # Check headings
-        for h in ["## DOMAINS", "## PROJECTS", "### 🔺 ResearchCompass-AI", "### 🔺 Memory Allocator Simulator", "## PROGRESSION", "## STACK"]:
+        for h in ["## DOMAINS", "## PROJECTS", "### 🔺 ResearchCompass-AI", "### 🔺 Memory Allocator Simulator", "## CONTRIBUTIONS", "## PROGRESSION", "## STACK"]:
             if h not in content:
                 errors.append(f"README.md is missing expected heading: {h}")
 
-    # 4. Validate profile.json
+    # 5. Validate profile.json
     json_path = "data/profile.json"
     if not os.path.exists(json_path):
         errors.append(f"Missing {json_path}")
@@ -78,7 +88,7 @@ def validate():
             print(f"  - {err}")
         sys.exit(1)
     else:
-        print("\n[OK] ALL HERO & REPO VALIDATION CHECKS PASSED.")
+        print("\n[OK] ALL CONTRACT VALIDATION CHECKS PASSED.")
         sys.exit(0)
 
 if __name__ == "__main__":

@@ -78,6 +78,22 @@ Salesforce experience — details pending confirmation.
 
 </div>
 
+## CONTRIBUTIONS
+
+<div align="center">
+  <img
+    src="./assets/contributions.svg"
+    width="100%"
+    alt="Vishvas77's annual contribution matrix: 107 total contributions across 24 active days"
+  />
+</div>
+
+<div align="center">
+
+──────── ◆ ────────
+
+</div>
+
 ## PROGRESSION
 
 ◆ **FOUNDATION** — First public repositories. Multi-language core fundamentals (`python-programs`, `java-programs`, `cpp-programs`).  

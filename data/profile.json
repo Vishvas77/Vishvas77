@@ -7,7 +7,7 @@
     "email": "polepakavishvas@gmail.com"
   },
   "hero": {
-    "strategy": "progressive_cinematic_animation",
+    "strategy": "direct_animated_webp",
     "animatedFile": "assets/hero.webp",
     "animatedDimensions": "960x540",
     "animatedDuration": "7.0s",
@@ -66,6 +66,14 @@
       ]
     }
   ],
+  "contributions": {
+    "strategy": "crimson_field_svg",
+    "svgPath": "assets/contributions.svg",
+    "palette": ["#161B22", "#4C0A15", "#8C1226", "#D71C37", "#F2879B"],
+    "totalContributions": 107,
+    "activeDays": 24,
+    "source": "GitHub Public Contribution Telemetry"
+  },
   "progression": {
     "currentTier": "ARCHITECT",
     "tiers": [

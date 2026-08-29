@@ -1,0 +1,39 @@
+name: refresh-contributions
+
+on:
+  schedule: # 00:00 UTC == 05:30 IST nightly
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pillow
+
+      - name: Generate Crimson Contribution Field
+        run: python scripts/generate_contributions.py
+
+      - name: Validate Contract
+        run: python scripts/validate_hero.py
+
+      - name: Commit & Push if changed
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add assets/contributions.svg data/profile.json
+          if git commit -m "telemetry: refresh crimson contribution field [skip ci]"; then
+            git push
+          fi

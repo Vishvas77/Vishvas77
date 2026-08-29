@@ -1,8 +1,7 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/poster.png">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/poster.png">
+  <source media="(prefers-reduced-motion: no-preference)" type="image/webp" srcset="./assets/hero.webp">
   <img src="./assets/poster.png" width="100%" alt="VISHVAS77 — AI Systems · Salesforce · Systems" />
 </picture>
 

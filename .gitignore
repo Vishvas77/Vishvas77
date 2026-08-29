@@ -22,6 +22,7 @@ dist/
 build/
 *.tmp
 *.log
+scratch/
 
 # Source media preserved locally only
 assets/media/*

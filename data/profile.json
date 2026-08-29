@@ -7,10 +7,15 @@
     "email": "polepakavishvas@gmail.com"
   },
   "hero": {
-    "strategy": "static_poster",
-    "posterFile": "assets/poster.png",
+    "strategy": "progressive_cinematic_animation",
+    "animatedFile": "assets/hero.webp",
+    "animatedDimensions": "960x540",
+    "animatedDuration": "7.0s",
+    "animatedFrames": 105,
+    "animatedFps": 16,
+    "fallbackFile": "assets/poster.png",
+    "fallbackDimensions": "1920x1080",
     "aspectRatio": "16:9",
-    "dimensions": "1920x1080",
     "alt": "VISHVAS77 — AI Systems · Salesforce · Systems"
   },
   "domains": [

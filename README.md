@@ -1,14 +1,11 @@
 <div align="center">
-
-<picture>
-  <source media="(prefers-reduced-motion: no-preference)" type="image/webp" srcset="./assets/hero.webp">
-  <img src="./assets/poster.png" width="100%" alt="VISHVAS77 — AI Systems · Salesforce · Systems" />
-</picture>
-
-<br />
-
-──────── ◆ ────────
-
+  <img
+    src="./assets/hero.webp"
+    width="100%"
+    alt="VISHVAS77 — AI Systems · Salesforce · Systems"
+  />
+  <br />
+  ──────── ◆ ────────
 </div>
 
 ## DOMAINS

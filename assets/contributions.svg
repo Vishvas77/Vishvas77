@@ -87,12 +87,12 @@
   <text x="607.5" y="52" class="label">Nov</text>
   <text x="607.5" y="52" class="label">Dec</text>
   <text x="622.0" y="52" class="label">Jan</text>
-  <text x="622.0" y="52" class="label">Feb</text>
+  <text x="636.5" y="52" class="label">Feb</text>
   <text x="636.5" y="52" class="label">Mar</text>
   <text x="651.0" y="52" class="label">Apr</text>
   <text x="651.0" y="52" class="label">May</text>
   <text x="665.5" y="52" class="label">Jun</text>
-  <text x="665.5" y="52" class="label">Jul</text>
+  <text x="680.0" y="52" class="label">Jul</text>
   <text x="680.0" y="52" class="label">Aug</text>
   <text x="694.5" y="52" class="label">Sep</text>
   <text x="694.5" y="52" class="label">Oct</text>
@@ -100,12 +100,12 @@
   <text x="723.5" y="52" class="label">Dec</text>
   <text x="723.5" y="52" class="label">Jan</text>
   <text x="738.0" y="52" class="label">Feb</text>
-  <text x="738.0" y="52" class="label">Mar</text>
+  <text x="752.5" y="52" class="label">Mar</text>
   <text x="752.5" y="52" class="label">Apr</text>
   <text x="767.0" y="52" class="label">May</text>
   <text x="767.0" y="52" class="label">Jun</text>
   <text x="781.5" y="52" class="label">Jul</text>
-  <text x="781.5" y="52" class="label">Aug</text>
+  <text x="796.0" y="52" class="label">Aug</text>
   <!-- Day Labels (Mon, Wed, Fri) -->
   <text x="16" y="85.5" class="label">Mon</text>
   <text x="16" y="114.5" class="label">Wed</text>
@@ -375,110 +375,111 @@
   <rect x="578.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 13th.</title></rect>
   <rect x="578.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 20th.</title></rect>
   <rect x="578.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 27th.</title></rect>
-  <rect x="578.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 5th.</title></rect>
-  <rect x="578.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 12th.</title></rect>
-  <rect x="593.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 19th.</title></rect>
-  <rect x="593.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 26th.</title></rect>
-  <rect x="593.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 3rd.</title></rect>
-  <rect x="593.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 10th.</title></rect>
-  <rect x="593.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 17th.</title></rect>
-  <rect x="593.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 24th.</title></rect>
-  <rect x="593.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 31st.</title></rect>
-  <rect x="607.5" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 7th.</title></rect>
-  <rect x="607.5" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 14th.</title></rect>
-  <rect x="607.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 21st.</title></rect>
-  <rect x="607.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 28th.</title></rect>
-  <rect x="607.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 5th.</title></rect>
-  <rect x="607.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 12th.</title></rect>
-  <rect x="607.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 19th.</title></rect>
-  <rect x="622.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 26th.</title></rect>
-  <rect x="622.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 2nd.</title></rect>
-  <rect x="622.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 9th.</title></rect>
-  <rect x="622.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 16th.</title></rect>
-  <rect x="622.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 23rd.</title></rect>
-  <rect x="622.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 30th.</title></rect>
-  <rect x="622.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on February 6th.</title></rect>
-  <rect x="636.5" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on February 13th.</title></rect>
-  <rect x="636.5" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on February 20th.</title></rect>
-  <rect x="636.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#4C0A15" stroke="#5E0D1B" stroke-width="1"><title>2 contributions on February 27th.</title></rect>
-  <rect x="636.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 6th.</title></rect>
-  <rect x="636.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 13th.</title></rect>
-  <rect x="636.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 20th.</title></rect>
-  <rect x="636.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 27th.</title></rect>
-  <rect x="651.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 3rd.</title></rect>
-  <rect x="651.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 10th.</title></rect>
-  <rect x="651.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 17th.</title></rect>
-  <rect x="651.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 24th.</title></rect>
-  <rect x="651.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 1st.</title></rect>
-  <rect x="651.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 8th.</title></rect>
-  <rect x="651.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 15th.</title></rect>
-  <rect x="665.5" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 22nd.</title></rect>
-  <rect x="665.5" y="76.5" width="11" height="11" rx="2" ry="2" fill="#4C0A15" stroke="#5E0D1B" stroke-width="1"><title>2 contributions on May 29th.</title></rect>
-  <rect x="665.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 5th.</title></rect>
-  <rect x="665.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 12th.</title></rect>
-  <rect x="665.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 19th.</title></rect>
-  <rect x="665.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 26th.</title></rect>
-  <rect x="665.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 3rd.</title></rect>
-  <rect x="680.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 10th.</title></rect>
-  <rect x="680.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 17th.</title></rect>
-  <rect x="680.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 24th.</title></rect>
-  <rect x="680.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 31st.</title></rect>
-  <rect x="680.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 7th.</title></rect>
-  <rect x="680.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 14th.</title></rect>
-  <rect x="680.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 21st.</title></rect>
-  <rect x="694.5" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 28th.</title></rect>
-  <rect x="694.5" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 6th.</title></rect>
-  <rect x="694.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 13th.</title></rect>
-  <rect x="694.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 20th.</title></rect>
-  <rect x="694.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 27th.</title></rect>
-  <rect x="694.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 4th.</title></rect>
-  <rect x="694.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 11th.</title></rect>
-  <rect x="709.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 18th.</title></rect>
-  <rect x="709.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 25th.</title></rect>
-  <rect x="709.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 1st.</title></rect>
-  <rect x="709.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 8th.</title></rect>
-  <rect x="709.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 15th.</title></rect>
-  <rect x="709.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 22nd.</title></rect>
-  <rect x="709.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 29th.</title></rect>
-  <rect x="723.5" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 6th.</title></rect>
-  <rect x="723.5" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 13th.</title></rect>
-  <rect x="723.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 20th.</title></rect>
-  <rect x="723.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 27th.</title></rect>
-  <rect x="723.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 3rd.</title></rect>
-  <rect x="723.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 10th.</title></rect>
-  <rect x="723.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 17th.</title></rect>
-  <rect x="738.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#8C1226" stroke="#A8162E" stroke-width="1"><title>4 contributions on January 24th.</title></rect>
-  <rect x="738.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 31st.</title></rect>
-  <rect x="738.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on February 7th.</title></rect>
-  <rect x="738.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on February 14th.</title></rect>
-  <rect x="738.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on February 21st.</title></rect>
-  <rect x="738.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on February 28th.</title></rect>
-  <rect x="738.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 7th.</title></rect>
-  <rect x="752.5" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 14th.</title></rect>
-  <rect x="752.5" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 21st.</title></rect>
-  <rect x="752.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 28th.</title></rect>
-  <rect x="752.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 4th.</title></rect>
-  <rect x="752.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 11th.</title></rect>
-  <rect x="752.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 18th.</title></rect>
-  <rect x="752.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 25th.</title></rect>
-  <rect x="767.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#4C0A15" stroke="#5E0D1B" stroke-width="1"><title>2 contributions on May 2nd.</title></rect>
-  <rect x="767.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 9th.</title></rect>
-  <rect x="767.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 16th.</title></rect>
-  <rect x="767.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 23rd.</title></rect>
-  <rect x="767.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 30th.</title></rect>
-  <rect x="767.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 6th.</title></rect>
-  <rect x="767.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 13th.</title></rect>
-  <rect x="781.5" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 20th.</title></rect>
-  <rect x="781.5" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 27th.</title></rect>
-  <rect x="781.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#D71C37" stroke="#EB2848" stroke-width="1"><title>7 contributions on July 4th.</title></rect>
-  <rect x="781.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 11th.</title></rect>
-  <rect x="781.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 18th.</title></rect>
-  <rect x="781.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 25th.</title></rect>
-  <rect x="781.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 1st.</title></rect>
-  <rect x="796.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 8th.</title></rect>
-  <rect x="796.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 15th.</title></rect>
-  <rect x="796.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 22nd.</title></rect>
-  <rect x="796.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#8C1226" stroke="#A8162E" stroke-width="1"><title>5 contributions on August 29th.</title></rect>
+  <rect x="578.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 3rd.</title></rect>
+  <rect x="578.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 5th.</title></rect>
+  <rect x="593.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 12th.</title></rect>
+  <rect x="593.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 19th.</title></rect>
+  <rect x="593.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 26th.</title></rect>
+  <rect x="593.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 3rd.</title></rect>
+  <rect x="593.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 10th.</title></rect>
+  <rect x="593.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 17th.</title></rect>
+  <rect x="593.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 24th.</title></rect>
+  <rect x="607.5" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 31st.</title></rect>
+  <rect x="607.5" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 7th.</title></rect>
+  <rect x="607.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 14th.</title></rect>
+  <rect x="607.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 21st.</title></rect>
+  <rect x="607.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 28th.</title></rect>
+  <rect x="607.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 5th.</title></rect>
+  <rect x="607.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 12th.</title></rect>
+  <rect x="622.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 19th.</title></rect>
+  <rect x="622.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 26th.</title></rect>
+  <rect x="622.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 2nd.</title></rect>
+  <rect x="622.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 9th.</title></rect>
+  <rect x="622.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 16th.</title></rect>
+  <rect x="622.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 23rd.</title></rect>
+  <rect x="622.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 30th.</title></rect>
+  <rect x="636.5" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on February 6th.</title></rect>
+  <rect x="636.5" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on February 13th.</title></rect>
+  <rect x="636.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on February 20th.</title></rect>
+  <rect x="636.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#4C0A15" stroke="#5E0D1B" stroke-width="1"><title>2 contributions on February 27th.</title></rect>
+  <rect x="636.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 6th.</title></rect>
+  <rect x="636.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 13th.</title></rect>
+  <rect x="636.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 20th.</title></rect>
+  <rect x="651.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 27th.</title></rect>
+  <rect x="651.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 3rd.</title></rect>
+  <rect x="651.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 10th.</title></rect>
+  <rect x="651.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 17th.</title></rect>
+  <rect x="651.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 24th.</title></rect>
+  <rect x="651.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 1st.</title></rect>
+  <rect x="651.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 8th.</title></rect>
+  <rect x="665.5" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 15th.</title></rect>
+  <rect x="665.5" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 22nd.</title></rect>
+  <rect x="665.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#4C0A15" stroke="#5E0D1B" stroke-width="1"><title>2 contributions on May 29th.</title></rect>
+  <rect x="665.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 5th.</title></rect>
+  <rect x="665.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 12th.</title></rect>
+  <rect x="665.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 19th.</title></rect>
+  <rect x="665.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 26th.</title></rect>
+  <rect x="680.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 3rd.</title></rect>
+  <rect x="680.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 10th.</title></rect>
+  <rect x="680.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 17th.</title></rect>
+  <rect x="680.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 24th.</title></rect>
+  <rect x="680.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 31st.</title></rect>
+  <rect x="680.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 7th.</title></rect>
+  <rect x="680.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 14th.</title></rect>
+  <rect x="694.5" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 21st.</title></rect>
+  <rect x="694.5" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 28th.</title></rect>
+  <rect x="694.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 6th.</title></rect>
+  <rect x="694.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 13th.</title></rect>
+  <rect x="694.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 20th.</title></rect>
+  <rect x="694.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 27th.</title></rect>
+  <rect x="694.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 4th.</title></rect>
+  <rect x="709.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 11th.</title></rect>
+  <rect x="709.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 18th.</title></rect>
+  <rect x="709.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on October 25th.</title></rect>
+  <rect x="709.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 1st.</title></rect>
+  <rect x="709.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 8th.</title></rect>
+  <rect x="709.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 15th.</title></rect>
+  <rect x="709.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 22nd.</title></rect>
+  <rect x="723.5" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on November 29th.</title></rect>
+  <rect x="723.5" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 6th.</title></rect>
+  <rect x="723.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 13th.</title></rect>
+  <rect x="723.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 20th.</title></rect>
+  <rect x="723.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on December 27th.</title></rect>
+  <rect x="723.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 3rd.</title></rect>
+  <rect x="723.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 10th.</title></rect>
+  <rect x="738.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 17th.</title></rect>
+  <rect x="738.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#8C1226" stroke="#A8162E" stroke-width="1"><title>4 contributions on January 24th.</title></rect>
+  <rect x="738.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on January 31st.</title></rect>
+  <rect x="738.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on February 7th.</title></rect>
+  <rect x="738.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on February 14th.</title></rect>
+  <rect x="738.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on February 21st.</title></rect>
+  <rect x="738.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on February 28th.</title></rect>
+  <rect x="752.5" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 7th.</title></rect>
+  <rect x="752.5" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 14th.</title></rect>
+  <rect x="752.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 21st.</title></rect>
+  <rect x="752.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on March 28th.</title></rect>
+  <rect x="752.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 4th.</title></rect>
+  <rect x="752.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 11th.</title></rect>
+  <rect x="752.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 18th.</title></rect>
+  <rect x="767.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on April 25th.</title></rect>
+  <rect x="767.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#4C0A15" stroke="#5E0D1B" stroke-width="1"><title>2 contributions on May 2nd.</title></rect>
+  <rect x="767.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 9th.</title></rect>
+  <rect x="767.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 16th.</title></rect>
+  <rect x="767.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 23rd.</title></rect>
+  <rect x="767.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on May 30th.</title></rect>
+  <rect x="767.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 6th.</title></rect>
+  <rect x="781.5" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 13th.</title></rect>
+  <rect x="781.5" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 20th.</title></rect>
+  <rect x="781.5" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on June 27th.</title></rect>
+  <rect x="781.5" y="105.5" width="11" height="11" rx="2" ry="2" fill="#D71C37" stroke="#EB2848" stroke-width="1"><title>7 contributions on July 4th.</title></rect>
+  <rect x="781.5" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 11th.</title></rect>
+  <rect x="781.5" y="134.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 18th.</title></rect>
+  <rect x="781.5" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on July 25th.</title></rect>
+  <rect x="796.0" y="62.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 1st.</title></rect>
+  <rect x="796.0" y="76.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 8th.</title></rect>
+  <rect x="796.0" y="91.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 15th.</title></rect>
+  <rect x="796.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 22nd.</title></rect>
+  <rect x="796.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#8C1226" stroke="#A8162E" stroke-width="1"><title>5 contributions on August 29th.</title></rect>
   <!-- Bottom Legend & Telemetry -->
   <line x1="20" y1="171.5" x2="830" y2="171.5" class="hairline" />
   <text x="20" y="189.5" class="legend-text">INTENSITY</text>

@@ -106,6 +106,7 @@
   <text x="781.5" y="52" class="label">Jun</text>
   <text x="781.5" y="52" class="label">Jul</text>
   <text x="796.0" y="52" class="label">Aug</text>
+  <text x="796.0" y="52" class="label">Sep</text>
   <!-- Day Labels (Mon, Wed, Fri) -->
   <text x="16" y="85.5" class="label">Mon</text>
   <text x="16" y="114.5" class="label">Wed</text>
@@ -481,6 +482,7 @@
   <rect x="796.0" y="105.5" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 15th.</title></rect>
   <rect x="796.0" y="120.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on August 22nd.</title></rect>
   <rect x="796.0" y="134.5" width="11" height="11" rx="2" ry="2" fill="#8C1226" stroke="#A8162E" stroke-width="1"><title>5 contributions on August 29th.</title></rect>
+  <rect x="796.0" y="149.0" width="11" height="11" rx="2" ry="2" fill="#161B22" stroke="#21262D" stroke-width="1"><title>No contributions on September 5th.</title></rect>
   <!-- Bottom Legend & Telemetry -->
   <line x1="20" y1="171.5" x2="830" y2="171.5" class="hairline" />
   <text x="20" y="189.5" class="legend-text">INTENSITY</text>
